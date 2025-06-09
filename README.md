@@ -7,6 +7,22 @@
 - Võ Quang Giáp - 22010343
 - Trần Mạnh Tuấn Anh - 22010371
 
+## Mục lục:
+
+* [1. Giới thiệu dự án](#1-giới-thiệu-dự-án)
+    * [1.1. Tên dự án](#11-tên-dự-án)
+    * [1.2. Mô tả](#12-mô-tả)
+    * [1.3. Mục tiêu kiểm thử](#13-mục-tiêu-kiểm-thử)
+* [2. Yêu cầu hệ thống](#2-yêu-cầu-hệ-thống)
+    * [2.1. Yêu cầu chức năng](#21-yêu-cầu-chức-năng)
+    * [2.2. Yêu cầu phi chức năng](#22-yêu-cầu-phi-chức-năng)
+* [3. Cài đặt và thiết lập](#3-cài-đặt-và-thiết-lập)
+    * [3.1. Cài đặt](#31-cài-đặt)
+    * [3.2. Thiết lập môi trường kiểm thử](#32-thiết-lập-môi-trường-kiểm-thử)
+* [4. Cấu trúc dự án](#4-cấu-trúc-dự-án)
+* [5. Báo cáo kiểm thử](#5-báo-cáo-kiểm-thử)
+* [6. Liên hệ](#6-liên-hệ)
+
 ## 1. Giới thiệu dự án:
 
 ### 1.1. Tên dự án: Đánh giá và kiểm định chất lượng trang web đặt vé xe Văn Minh
@@ -45,20 +61,20 @@ Dự án kiểm thử này sẽ tập trung vào các chức năng sau của tra
 Chúng tôi cũng sẽ xem xét các yêu cầu phi chức năng sau:
 
 - Hiệu suất:
- + Thời gian tải trang dưới 3 giây.
- + Khả năng xử lý ít nhất 100 người dùng đồng thời mà không giảm hiệu suất đáng kể.
+  + Thời gian tải trang dưới 3 giây.
+  + Khả năng xử lý ít nhất 100 người dùng đồng thời mà không giảm hiệu suất đáng kể.
 - Khả năng sử dụng (Usability):
- + Giao diện thân thiện, dễ điều hướng.
- + Quy trình đặt vé rõ ràng, đơn giản.
+  + Giao diện thân thiện, dễ điều hướng.
+  + Quy trình đặt vé rõ ràng, đơn giản.
 - Tính tương thích:
- + Tương thích với các trình duyệt phổ biến: Chrome, Firefox, Edge, Safari (phiên bản mới nhất).
- + Hiển thị tốt trên các thiết bị di động (responsive design).
+  + Tương thích với các trình duyệt phổ biến: Chrome, Firefox, Edge, Safari (phiên bản mới nhất).
+  + Hiển thị tốt trên các thiết bị di động (responsive design).
 - Độ tin cậy:
- + Tỷ lệ lỗi (bugs) dưới 1% trên các chức năng chính.
- + Khả năng khôi phục sau sự cố (ví dụ: mất kết nối internet tạm thời trong quá trình thanh toán).
+  + Tỷ lệ lỗi (bugs) dưới 1% trên các chức năng chính.
+  + Khả năng khôi phục sau sự cố (ví dụ: mất kết nối internet tạm thời trong quá trình thanh toán).
 - Bảo mật (cơ bản):
- + Mã hóa dữ liệu nhạy cảm (ví dụ: thông tin đăng nhập, thanh toán).
- + Ngăn chặn các lỗ hổng bảo mật phổ biến (ví dụ: XSS, SQL Injection - nếu có thể kiểm thử ở cấp độ bề mặt).
+  + Mã hóa dữ liệu nhạy cảm (ví dụ: thông tin đăng nhập, thanh toán).
+  + Ngăn chặn các lỗ hổng bảo mật phổ biến (ví dụ: XSS, SQL Injection - nếu có thể kiểm thử ở cấp độ bề mặt).
 
 ## 3. Cài đặt và thiết lập
 
