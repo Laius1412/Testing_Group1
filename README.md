@@ -25,7 +25,9 @@
 
 ## 1. Giới thiệu dự án:
 
-### 1.1. Tên dự án: Đánh giá và kiểm định chất lượng trang web đặt vé xe Văn Minh
+### 1.1. Tên dự án: 
+
+- Tên dự án: Đánh giá và kiểm định chất lượng trang web đặt vé xe Văn Minh
 
 ### 1.2. Mô tả
 
