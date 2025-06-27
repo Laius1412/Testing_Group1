@@ -27,11 +27,11 @@
 
 ### 1.1. Tên dự án: 
 
-- Tên dự án: Đánh giá và kiểm định chất lượng trang web đặt vé xe Văn Minh
+- Tên dự án: Đánh giá và kiểm định chất lượng trang web đặt vé xe vexere.com
 
 ### 1.2. Mô tả
 
-- Dự án này tập trung vào việc kiểm thử chất lượng và đánh giá trải nghiệm người dùng của trang web đặt vé xe Văn Minh (vanminh76.vn). Chúng tôi sẽ thực hiện các quy trình kiểm thử toàn diện để phát hiện lỗi, đảm bảo tính năng hoạt động chính xác và cải thiện độ ổn định, hiệu suất của trang web. Mục tiêu cuối cùng là giúp Văn Minh cung cấp một nền tảng đặt vé trực tuyến liền mạch và đáng tin cậy cho khách hàng.
+- Dự án này tập trung vào việc kiểm thử chất lượng và đánh giá trải nghiệm người dùng của trang web đặt vé xe (vexere.com). Chúng tôi sẽ thực hiện các quy trình kiểm thử toàn diện để phát hiện lỗi, đảm bảo tính năng hoạt động chính xác và cải thiện độ ổn định, hiệu suất của trang web. Mục tiêu cuối cùng là giúp vexere.com cung cấp một nền tảng đặt vé trực tuyến liền mạch và đáng tin cậy cho khách hàng.
 
 ### 1.3. Mục tiêu kiểm thử
 
@@ -48,7 +48,7 @@ Các mục tiêu chính của quá trình kiểm thử này bao gồm:
 
 ### 2.1. Yêu cầu chức năng
 
-Dự án kiểm thử này sẽ tập trung vào các chức năng sau của trang web vanminh76.vn:
+Dự án kiểm thử này sẽ tập trung vào các chức năng sau của trang web vexere.com:
 
 - Tìm kiếm chuyến đi: Khả năng tìm kiếm chuyến đi theo điểm đi, điểm đến, ngày khởi hành.
 - Hiển thị kết quả tìm kiếm: Liệt kê các chuyến đi phù hợp với thông tin chi tiết (giờ khởi hành, giá vé, loại xe, số ghế trống).
