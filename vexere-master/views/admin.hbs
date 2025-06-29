@@ -1,0 +1,222 @@
+<link rel="stylesheet" href="/css/global.css" />
+<link rel="stylesheet" href="/css/Admin.css" />
+<link rel="stylesheet" href="/css/index.css" />
+<link rel="stylesheet" href="/toastify.css" />
+
+<script type="module" src="/js/Admin/Admin.js" defer></script>
+<script type="module" src="/js/Admin/Ticket.js" defer></script>
+<script type="module" src="/js/Admin/House.js" defer></script>
+<script type="module" src="/js/Admin/Bus.js" defer></script>
+<script type="module" src="/js/Admin/Detail.js" defer></script>
+
+<div id="admin-wrapper">
+  <ul id="admin-tab-select">
+    <li value="0">
+      <img src="/assets/admin-manager.png" alt="">
+      <span>Quản lí nhà xe</span>
+      <ul class="sub-tab-select">
+        <li>
+          <div id="house-refresh-btn"> Làm Mới </div>
+        </li>
+        <li>
+          <div id="house-add-btn"> Thêm Nhà Xe </div>
+        </li>
+      </ul>
+    </li>
+    <li value="1">
+      <img src="/assets/admin-bus-driver.png" alt="">
+      <span>Quản lí xe</span>
+      <ul class="sub-tab-select" style="display: none;">
+        <li>
+          <div id="bus-refresh-btn">Làm mới</div>
+        </li>
+        <li>
+          <div id="bus-add-btn">Thêm xe</div>
+        </li>
+      </ul>
+    </li>
+    <li value="2">
+      {{!-- <a href="/admin/route_detail"> --}}
+        <img src="/assets/admin-admin.png" alt="">
+        <span>Quản lí chuyến xe</span>
+        <ul class="sub-tab-select" style="display: none;">
+          <li>
+            <div id="route-detail-find">Tìm chuyến</div>
+          </li>
+          <li>
+            <div id="route-detail-add">Thêm / sửa chuyến đi</div>
+          </li>
+        </ul>
+        {{!--
+      </a> --}}
+    </li>
+    <li value="3">
+      <img src="/assets/admin-bus-ticket.png" alt="">
+      <span>Quản lí vé xe</span>
+      <ul class="sub-tab-select" style="display: none;">
+        <li>
+          <div id="ticket-refresh-btn">Làm Mới</div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul id="admin-tab-display">
+    {{!-- Quản lí nhà xe --}}
+    <li class="js-tab-display" style="height: 100%; display:block;margin-right:2rem">
+      <section class="tab-display ">
+        <section class="tab-display-option">
+          <ul id="house-display-list"></ul>
+        </section>
+
+        <section class="tab-display-form">
+          <form class="display-form" id="house-display-form" style="display: flex;flex-direction:column">
+            <label>
+              Mã nhà xe
+              <input name="house-id" type="number" placeholder="Auto generate" readonly />
+            </label>
+            <label>
+              Tên nhà xe
+              <input name="house-name" type="text" placeholder="Bus House Name" required />
+            </label>
+            <label>
+              Thông tin nhà xe
+              <textarea name="desc" rows="12"></textarea>
+            </label>
+            <label>
+              Số điện thoại
+              <textarea name="phone" rows="2"></textarea>
+            </label>
+            <label>
+              <span></span>
+              <input type="submit" value="Đồng ý" />
+            </label>
+          </form>
+        </section>
+      </section>
+    </li>
+
+    {{!-- Quản lí xe --}}
+    <li class="js-tab-display" style="height: 100%; display:none;margin-right:2rem">
+      <section class="tab-display">
+        <section class="tab-display-option">
+          <ul id="bus-display-list"></ul>
+        </section>
+
+        <section class="tab-display-form">
+          <form class="display-form" id="bus-display-form">
+            <label>
+              <span>Mã xe</span>
+              <input name="busId" type="number" readonly="true" required="true" placeholder="Auto generate"/>
+            </label>
+            <label>
+              <span>Biển số</span>
+              <input name="plate" type="text" required />
+            </label>
+            <label>
+              <span>Mã loại xe</span>
+              <input name="busType" type="number" min="1" max="3" required />
+            </label>
+            <label>
+              <span>Số lượng ghế</span>
+              <input name="seats" min="1" type="number" required />
+            </label>
+            <label>
+              <span>Thuộc nhà xe</span>
+              <select name="house" id="bus-house-select" required>
+              </select>
+            </label>
+            <input type="submit" value="Đồng ý" />
+          </form>
+        </section>
+      </section>
+    </li>
+
+    {{!-- Quản lí chuyến xe --}}
+    <li class="js-tab-display" style="height: 100%; display:none;margin-right:2rem">
+      <section class="tab-display">
+        <section class="tab-display-option">
+          <ul id="route-display-list">
+
+          </ul>
+        </section>
+        <section class="tab-display-form">
+          <form method="GET" class="display-form" id="route-detail-form">
+            <label class="js-post-label" style="display: none;"><span>Mã chuyến đi</span>
+              <input type="number" name="detailId">
+            </label>
+            <label><span>Điểm đi</span>
+              <select name="from-location">
+                {{#each locations}}
+                <option value="{{this.id}}">{{this.name}}</option>
+                {{/each}}
+              </select>
+            </label>
+            <label><span>Điểm đến</span>
+              <select name="to-location">
+                {{#each locations}}
+                <option value="{{this.id}}">{{this.name}}</option>
+                {{/each}}
+              </select>
+            </label>
+            <label class="js-time-label"><span>Ngày đi sớm nhất</span>
+              <input name="time1" type="date">
+            </label>
+            <label class="js-time-label"><span>Ngày đi trễ nhất</span>
+              <input name="time2" type="date">
+            </label>
+            <label style="display: none;" class="js-post-label"><span>Mã xe bus</span>
+              <input type="number" name="busId">
+            </label>
+            <label style="display: none;" class="js-post-label"><span>Số ghế còn trống</span>
+              <input type="number" name="seat">
+            </label>
+            <label style="display: none;" class="js-post-label"><span>Đơn giá ghế</span>
+              <input type="number" name="price">
+            </label>
+
+            <label>
+              <span></span>
+              <input type="submit" value="Chấp nhận">
+            </label>
+          </form>
+        </section>
+
+      </section>
+
+    </li>
+
+    {{!-- Quản lí vé xe --}}
+    <li class="js-tab-display" style="height: 100%; display:none;margin-right:2rem">
+      <section class="tab-display">
+        <section class="tab-display-option">
+          <ul id="ticket-display-list"></ul>
+        </section>
+        <section class="tab-display-form">
+          <form class="display-form" id="ticket-display-form">
+            <label>
+              <span> TicketID: </span>
+              <input name="ticket-id" type="number" readonly placeholder="Auto generate"/>
+            </label>
+            <label>
+              <span>Comment</span>
+              <textarea name="comment" rows="3" cols="12" placeholder="Ticket Commet"></textarea>
+            </label>
+            <label>
+              <span> Ticket Status:</span>
+              <select name="ticket-status">
+                <option value="WAITING">WAITING</option>
+                <option value="PAID">PAID</option>
+                <option value="CANCELED">CANCELED</option>
+                <option value="FINISHED">FINISHED</option>
+              </select>
+            </label>
+            <input type="submit" value="Cập nhật" />
+          </form>
+        </section>
+      </section>
+    </li>
+
+
+  </ul>
+</div>

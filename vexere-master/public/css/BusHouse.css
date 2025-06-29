@@ -1,0 +1,100 @@
+
+#vexere_house_wrapper{
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  margin-bottom: 3rem;
+  min-width: 100vh;
+  margin-inline: 1.5rem;
+  column-gap: 1.5rem;
+  margin-inline: 5rem;
+  margin-top: 3rem;
+}
+
+#house-tab-select{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1rem 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.704);
+}
+#house-tab-select > li{
+  cursor: pointer;
+  min-height: 3rem;
+  display: flex;
+  justify-content: center;
+  margin-inline: 2rem;
+}
+#house-tab-select > li > span{
+  margin:auto auto;
+}
+#house-tab-select > li:hover{
+  border-bottom: 2px double rgb(0, 96, 196);
+  color: rgb(0, 96, 196);
+}
+#bus_house_image {
+  overflow: hidden;
+}
+
+.bus_img_slide {
+  display: flex;
+  max-width: calc(100% - 0.5rem);
+  margin-inline: 0.5rem;
+  overflow: scroll;
+  /* min-height: 400px;
+  max-height: 600px;
+  max-width: 600px; */
+  margin: 0 auto;
+  border-radius: 1rem;
+  height: 500px;
+}
+
+.bus_img_slide>img {
+  flex-shrink: 0;
+  width: 100%;
+  height: inherit;
+  object-fit: fill;
+}
+
+.vexere_bushouse_name_wrapper {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.vexere_bushouse_name_wrapper>h1 {
+  font-size: x-large;
+}
+
+.vexere_rating_wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 800px;
+  margin:0 auto;
+}
+.vexere_bushouse_desc_wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#vexere_house_phonelist{
+  width: 100%;
+  background-color: rgb(252, 252, 216);
+}
+#vexere_house_phonelist > li{
+  padding: 0.5rem 0;
+  min-height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(132, 130, 130, 0.615);
+
+}
+#vexere_house_phonelist > li > *{
+  background-color: rgb(255, 199, 0);
+  padding: 0.5rem 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+}

@@ -1,0 +1,56 @@
+{
+  "name": "vexere",
+  "version": "0.0.1",
+  "description": "project web",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node server.js",
+    "dev-ts": "concurrently \"npx tsc --watch\" \"nodemon --experimental-modules --es-module-specifier-resolution=node -q server.js\"",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
+  },
+  "author": "ptudw_Nhom9",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.7.1",
+    "body-parser": "^1.20.1",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "express-mailer": "^0.3.1",
+    "express-openid-connect": "^2.11.0",
+    "method-override": "^3.0.0",
+    "node-fetch": "^3.3.0",
+    "nodemailer": "^6.8.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/jest": "^29.5.0",
+    "@types/method-override": "^0.0.32",
+    "@types/node": "^18.11.3",
+    "@types/nodemailer": "^6.4.7",
+    "concurrently": "^7.5.0",
+    "dotenv": "^16.0.3",
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.20",
+    "prisma": "^4.7.1",
+    "supertest": "^6.3.3",
+    "typescript": "^4.8.4"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "useESM": true
+      }
+    },
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    },
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": ["<rootDir>/tests/setup.js"]
+  }
+}

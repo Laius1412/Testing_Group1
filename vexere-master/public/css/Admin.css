@@ -1,0 +1,203 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#admin-wrapper {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  height: 100vh;
+  margin: 3em 3em;
+  padding-inline: 2.5rem;
+}
+
+#admin-tab-select {
+  background-color: #fff;
+  border-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
+  width: 17rem;
+  height: fit-content;
+  padding: .5rem 0 1.2rem 0;
+}
+
+#admin-tab-select>li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 1em;
+  margin-left: 1.6rem;
+  flex-wrap: wrap;
+}
+
+#admin-tab-select>li span {
+  margin-left: .3rem;
+  font-size: 18px;
+}
+
+#admin-tab-select>li:not(:first-child) {
+  margin-top: 15px;
+}
+
+.sub-tab-select {
+  margin-top: 0;
+  flex-basis: 100%;
+  list-style-type: "↳";
+}
+
+.sub-tab-select>li {
+  margin-left: 3rem;
+}
+
+.sub-tab-select>li:hover {
+  transform: scale(1.05);
+  transition: .2s ease-in-out;
+  color: #0A6EBD;
+}
+
+#admin-tab-select>li>span:hover {
+  color: #0A6EBD;
+  transform: scale(1.05);
+  transition: .3s ease-in-out;
+}
+
+.tab-display {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  min-height: 95%;
+  column-gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.tab-display-form {
+  min-height: 95%;
+  width: 80%;
+}
+
+.tab-display-option {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  max-height: 50%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* width */
+.tab-display-option::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+.tab-display-option::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+.tab-display-option::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.tab-display-option>ul {
+  padding-right: .1em;
+}
+
+.house-display-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-display-option>ul>li {
+  cursor: pointer;
+  margin-left: .5rem;
+  min-height: 2rem;
+  display: grid;
+  place-items: center;
+}
+
+.tab-display-option>ul>li:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.tab-display-option>ul>li:hover {
+  color: #fff;
+  opacity: .8;
+  transform: scale(1.02);
+  transition: .2s ease-in-out;
+  background-color: #0A6EBD;
+  border-radius: 5px;
+}
+
+#ticket-display-form {
+  display: flex;
+  flex-direction: column;
+}
+.display-form > *{
+  margin: 0.5rem 0;
+}
+.display-form>label {
+  display: grid;
+  column-gap: 1rem;
+  grid-template-columns: 0.5fr 1.5fr;
+}
+
+.display-form>label {
+  text-align: right;
+}
+
+.display-form>label>input, .display-form>label>select {
+  padding: 0.5rem;
+
+}
+
+.display-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-form textarea {
+  resize: vertical;
+}
+
+.display-form input {
+  outline: none;
+  padding: .8em;
+  height: 1.5em;
+  font-size: .9em;
+  border-radius: .2em;
+  float: right;
+}
+.display-form select {
+  padding: 1em;
+}
+.display-form textarea {
+  outline: none;
+  padding: .8em;
+  font-size: .9em;
+  border-radius: .2em;
+  float: right;
+}
+
+.display-form input[type=submit] {
+  width: 6rem;
+  height: 3rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1em;
+  border: none;
+  background-color: #0A6EBD;
+  padding: .6em .6em;
+  cursor: pointer;
+  border-radius: 10px;
+  opacity: 0.6;
+  margin-left: auto;
+}
+
+.display-form input[type=submit]:hover {
+  transform: scale(1.05);
+  transition: .2s ease-in-out;
+  opacity: .8;
+}
+

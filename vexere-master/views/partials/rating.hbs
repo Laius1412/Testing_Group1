@@ -1,0 +1,20 @@
+<section class="vexere_rating_item">
+  <div class="review_info">
+    <img style="width: 100%;" src="/assets/default-profile.png" />
+    <h3>{{name}}</h3>
+    <span>
+      {{#switch rating }}
+        {{#case 0}} ⚝⚝⚝⚝⚝ {{/case}}
+        {{#case 1}} ⭐⚝⚝⚝⚝ {{/case}}
+        {{#case 2}} ⭐⭐⚝⚝⚝ {{/case}}
+        {{#case 3}} ⭐⭐⭐⚝⚝ {{/case}}
+        {{#case 4}} ⭐⭐⭐⭐⚝ {{/case}}
+        {{#case 5}} ⭐⭐⭐⭐⭐ {{/case}}
+      {{/switch}}
+    </span>
+  </div>
+  <div>
+    <hr style="margin: 0.5rem;">
+    <p>{{comment}}</p>
+  </div>
+</section>

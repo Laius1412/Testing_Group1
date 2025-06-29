@@ -1,0 +1,84 @@
+
+<form class="vexere_info_wrapper js-ticket-form" method="post" target="_blank" action="/api/ticket">
+
+  <!-- Hình xe -->
+  <div class="vexere_bus_image_wrapper">
+    {{#switch detail.Bus.type}}
+    {{#case 1}}<img src="/assets/bushouse(4).jpeg" alt="Hinh xe">{{/case}}
+    {{#case 2}}<img src="/assets/bushouse(8).jpeg" alt="Hinh xe">{{/case}}
+    {{#case 3}}<img src="/assets/bushouse(7).jpeg" alt="Hinh xe">{{/case}}
+    {{/switch}}
+  </div>
+
+  <!-- Thông tin cơ bản đi đến -->
+  <div>
+    <h3 class="js-bus-house-name"> {{detail.Bus.BusHouse.Name}} </h3>
+    <p>
+      <span class="js-bus-type">Loại xe
+        {{#switch detail.Bus.type}}
+        {{#case 1}}Xe Bus ghế ngồi{{/case}}
+        {{#case 2}}Xe Bus giường nằm{{/case}}
+        {{#case 3}}Xe Limousine{{/case}}
+        {{/switch}}
+      </span>
+    </p>
+    <div class="vexere_time_container">
+      <div class="vexere_departure_icon">
+        <div>
+          <img style="width: 100%;" src="/assets/from-icon.png" alt="icon" />
+        </div>
+        <div style="flex:1; display:flex; align-items: center;">
+          <img style="width: 100%;" src="/assets/dot-line.png" alt="icon" />
+        </div>
+        <div>
+          <img style="width: 100%;" src="/assets/to-icon.png" alt="icon" />
+        </div>
+      </div>
+      <div>
+        <h3 class="js-from-time">{{detail.startTime}}</h3>
+        <p class="js-from-location">{{route.Location_Route_startLocIdToLocation.name}}</p>
+      </div>
+      <div>
+        <p>Thời gian dự tính {{detail.expect}} tiếng</p>
+      </div>
+      <div>
+        <h3 class="js-to-time">{{detail.endTime}}</h3>
+        <p class="js-to-location">{{route.Location_Route_endLocIdToLocation.name}}</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Giá và chi tiết -->
+  <div class="vexere_gia_brief_info">
+    <h3 class="js-ticket-price">Từ {{detail.price}} VND</h3>
+    <div>
+      <h3><span class="js-empty-seat">{{detail.remainSeat}}</span> chỗ còn trống</h3>
+    </div>
+    <div class="vexere_info_action js-vexere-info-action">
+      <h4>
+        <a target="_blank" href="/house?houseId={{detail.Bus.busHouse}}">Thông tin chi tiết</a>
+        <img src="/assets/down-arrow.png" alt="" />
+      </h4>
+      <input type="number" name="detailId" style="display: none;" value="{{detail.id}}" readonly>
+      <button>Đặt vé</button>
+
+    </div>
+  </div>
+
+  <div class="vexere-ticket-submit-info" style="display: none;">
+    <label>
+      <span>Số lượng vé</span>
+      <input name="amount" type="number" min="1" max="{{detail.remainSeat}}" required>
+    </label>
+    <label>
+      <span>Thông tin thêm</span>
+      <textarea name="comment" rows="3"></textarea>
+    </label>
+    <label class="vexere_info_action">
+      <span></span>
+      <button style="background-color: #0A6EBD;margin-left:auto;border:none">Đồng ý</button>
+    </label>
+  </div>
+
+</form>

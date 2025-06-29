@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <script src="https://kit.fontawesome.com/3233d35d96.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/public/css/UserDashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light p-3">
+      <div class="container-fluid">
+        <a href="#" class="brand">
+          <img src="/public/assets//logo/logo-64.png" alt="Logo" />
+          <a href="#" class="text-decoration-none">
+            <h1 class="brand-name">CheapTravelling</h1>
+          </a>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Thuê xe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Trở thành đối tác</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">EN</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link login" aria-current="page" href="#">Đăng nhập</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="sidebar">
+      <div class="user-infor">
+        <img src="/public/assets/testUserImg.jpg" width="64px" height="64px" alt="user-image" class="user-image" />
+        <h6 class="user-login-name inline-block">
+          Hàn Thọ Nhật Phú
+        </h6>
+      </div>
+      <div class="sidebar-navigation">
+        <ul class="sidebar-list">
+          <li class="list-item active-tab"> <i class="fa-solid fa-user"></i> Thay đổi thông tin tài khoản</li>
+          <li class="list-item"><i class="fa-solid fa-tags"></i> Thành viên <span class="user-rank-span">bạc</span>
+          </li>
+          <li class="list-item"><i class="fa-solid fa-ticket"></i> Vé của tôi</li>
+          <li class="list-item"><i class="fa-solid fa-gift"></i> Ưu đãi</li>
+          <li class="list-item"><i class="fa-sharp fa-solid fa-credit-card-blank"></i> Quản lý thẻ</li>
+          <li class="list-item"><i class="fa-solid fa-comment"></i> Nhận xét chuyến đi</li>
+          <li class=""><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Đăng xuất</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sidebar-display">
+      <div class="sidebar-display-list user-change-acount-information active">
+        <div class="user-change-title">
+          <h2>Hồ sơ của tôi</h2>
+          <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+        </div>
+        <div class="user-change-information-form-layout">
+          <div class="user-change-information-form">
+            <form action="" method="GET">
+              <div>
+                <label for="username">
+                  Tên đăng nhập
+                  <input type="text" name="user-login-name" id="user-login-name" value="hanphu234" />
+                </label>
+                <div class="user-name-display inline-block mgl5"></div>
+              </div>
+              <div>
+                <label for="user-name-display">
+                  Tên
+                  <input type="text" name="user-name-display" id="user-name-display" value="Hàn Thọ Nhật Phú" />
+                </label>
+                <div class="user-name-display inline-block mgl5"></div>
+              </div>
+              <div>
+                <label for="user-password">
+                  Mật khẩu
+                  <input type="password" name="user-passowrd" id="user-password" value="hanphu1234" />
+                </label>
+                <div class="user-password inline-block"></div>
+              </div>
+              <div class="test">
+                <label for="email">
+                  Email
+                  <input type="text" name="email" id="email" value="phu@testemail.com"
+                    pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address" />
+                </label>
+                <div class="email inline-block"></div>
+              </div>
+              <div>
+                <label for="phone-number">
+                  Số điện thoại
+                  <input type="text" name="phone-number" id="phone-number" value="0123456789" />
+                </label>
+                <div class="inline-block"></div>
+              </div>
+              <div>
+                <label for="birthday">
+                  <div class="birthday-lable">Ngày sinh</div>
+                  <input type="date" name="birthday" id="birthday" />
+                </label>
+                <div class="inline-block"></div>
+              </div>
+              <div>
+                <button class="save-button">Lưu</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="sidebar-display-list  user-rank-display unactive">
+        <div>
+          <h4 class="rank-display">Bạn hiện đang là thành viên bạc</h4>
+        </div>
+      </div>
+
+      <div class="sidebar-display-list  user-invoice-ticket-display unactive">
+        <div class="tab">
+          <div>
+            <button class="tab-links active-tab">Hiện tại</button>
+            <button class="tab-links">Đã đi</button>
+            <button class="tab-links">Đã huỷ</button>
+          </div>
+
+          <div class="tab-content active">
+            <p>Bạn chưa có chuyến sắp đi nào, <span class="book-ticket-span"><a href="#">đặt
+                  vé ngay</a></span></p>
+          </div>
+          <div class="tab-content unactive">
+            <div class="ticket-container">
+              <div>
+                <h4 class="booked-date">Thứ 7, 04/12/2022</h4>
+                <div class="paid-ticket">
+                  <div class="paid-ticket-information">
+                    <div>
+                      <h3 class="paid-ticket-time">15:00</h3>
+                      <p>Phương Trang</p>
+                      <p>Hồ Chí Minh - Đà Lạt</p>
+                      <p>Biển số xe: <span class="license-plate">60F-66666</span></p>
+                    </div>
+                    <span class="paid-span">Đã thanh toán</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="rebook">
+              <a href="#"><i class="fa-solid fa-ticket"></i> Đặt khứ hồi</a>
+            </div>
+          </div>
+          <div class="tab-content unactive">
+            <div class="ticket-container">
+              <div>
+                <h4 class="booked-date">Thứ 7, 04/12/2022</h4>
+                <div class="paid-ticket">
+                  <div class="paid-ticket-information">
+                    <div>
+                      <h3 class="paid-ticket-time">14:00</h3>
+                      <p>Phương Trang</p>
+                      <p>Hồ Chí Minh - Đà Lạt</p>
+                      <p>Biển số xe: <span class="license-plate">60F-55555</span></p>
+                    </div>
+                    <span class="paid-span">Đã huỷ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="rebook">
+              <a href="#"><i class="fa-solid fa-ticket"></i> Đặt lại</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-display-list  user-promotion-display unactive">
+        <div>
+          <h4>Nội dung ưu đãi</h4>
+        </div>
+      </div>
+
+      <div class="sidebar-display-list  user-manage-card unactive">
+        <div>
+          <h4>Nội dung quản lý thẻ</h4>
+        </div>
+      </div>
+
+      <div class="sidebar-display-list  user-review-trip unactive">
+        <div>
+          <h4>Nhận xét chuyến đi</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/public/js/UserDashboard/UserDashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="/css/global.css" />
+<link rel="stylesheet" href="/css/Search.css" />
+<link rel="stylesheet" href="/css/ChiTiet.css" />
+<link rel="stylesheet" href="/css/main.css" />
+<link rel="stylesheet" href="/css/index.css"/>
+<script type="module" src="/js/Search/Search.js" defer></script>
+
+<!-- main -->
+<div class="search_result_container">
+  <form method="get" accept="/search" class="search_result_filter">
+    <!-- Price range -->
+    <section>
+      <input style="display: none;" name="fromId" value="{{route.Location_Route_startLocIdToLocation.name}}">
+      <input style="display: none;" name="toId" value="{{route.Location_Route_endLocIdToLocation.name}}">
+      <input style="display: none;" name="date" type="date" value="{{date}}">
+
+      <div style="width: 100%;">
+        <div id="price-label"><h4>Giá vé</h4></div>
+
+        <div class="price-range">
+          <label> <p>  Giá thấp nhất</p>
+            <input id="min-price-slider" name="min" type="number" class="range-min" min="0" max="2000000" step="10000">
+          </label>
+          <label> <p>  Giá cao nhất</p>  
+            <input id="max-price-slider" name="max" type="number" class="range-max" min="0" max="2000000" step="10000">
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!--Seats -->
+    <section id="filter_by_empty_seat">
+      <h4>Số ghế trống: </h4>
+      <span id="filter_by_empty_seat_action">
+        <button value="1">+</button>
+        <span>0</span>
+        <button value="-1">-</button>
+      </span>
+    </section>
+
+    <!-- Bus House -->
+    <section>
+      <label><h4>Nhà xe</h4>
+      </label>
+      <ul>
+        {{#each houses}}
+        <li><label>
+            <input type="checkbox" name="busHouse" value={{this.id}} />
+            {{this.Name}}
+          </label></li>
+        {{/each}}
+      </ul>
+    </section>
+
+    {{!-- Bus type --}}
+    <section class="filter-bus-type" style="display: flex; flex-direction:column">
+      <h4>Loại xe</h4>
+      <label> 
+        <input type="radio" name="busType" value="1" >
+        <p>Xe bus ghế ngồi</p>
+      </label>
+      <label> 
+        <input type="radio" name="busType" value="2" >
+        <p>Xe bus giường nằm</p>
+      </label>
+      <label> 
+        <input type="radio" name="busType" value="3" >
+        <p>Xe Limousine</p>
+      </label>
+    </section>
+
+    <input class="submit-apply" type="submit" value="Apply" />
+  </form>
+
+  <section id="search_result_display" class="search_result_display">
+
+    {{#if empty}}
+    <h4>Xin lỗi quý khách vexereGroup09 hiện tại chưa khai thác tuyến đường này </h4>
+    {{/if}}
+    {{#each routeDetail}}
+    {{> searchResult detail=this route=../route }}
+    {{/each}}
+  </section>
+</div>
+<!-- /main -->

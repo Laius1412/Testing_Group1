@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		<div class="route-detail-form container w-50">
+			<h2> Thêm tuyến xe </h2>
+			<form>
+				<input
+					type="number"
+					id="busId"
+					name="busId"
+					placeholder="Mã xe"
+					class="form-control my-3 required"
+				/>
+
+				<input
+					type="number"
+					id="price"
+					name="price"
+					placeholder="Giá tuyến xe"
+					class="form-control my-3 required"
+				/>
+
+				<input
+					type="datetime-local"
+					id="startTime"
+					name="startTime"
+                    placeholder="Thời gian khởi hành"
+					class="form-control my-3 required"
+				/>
+
+				<input
+					type="datetime-local"
+					name="endTime"
+					name="endTime"
+                    placeholder="Thời gian đến"
+					class="form-control my-3 required"
+				/>
+
+				<input
+					type="number"
+					id="remainSeat"
+					name="remainSeat"
+					placeholder="Số ghế"
+					class="form-control my-3 required"
+				/>
+				<input
+					type="number"
+					id="routeId"
+					name="routeId"
+					placeholder="Mã tuyến"
+					class="form-control my-3 required"
+				/>
+				<button class="btn btn-primary">
+                    Submit
+                </button>
+			</form>
+		</div>
+	</body>
+</html>

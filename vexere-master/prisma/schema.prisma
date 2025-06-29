@@ -1,0 +1,100 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Bus {
+  id          Int           @id @default(autoincrement())
+  plate       String        @db.Char(20)
+  seatAmount  Int
+  type        Int
+  busHouse    Int
+  BusHouse    BusHouse      @relation(fields: [busHouse], references: [id],onDelete: Cascade)
+  RouteDetail RouteDetail[]
+}
+
+model BusHouse {
+  id     Int      @id @default(autoincrement())
+  Name   String   @db.Char(50)
+  Desc   String?
+  Phone  String?
+  Bus    Bus[]
+  Rating Rating[]
+}
+
+model Location {
+  id                               Int     @id @default(autoincrement())
+  name                             String
+  Route_Route_endLocIdToLocation   Route[] @relation("Route_endLocIdToLocation")
+  Route_Route_startLocIdToLocation Route[] @relation("Route_startLocIdToLocation")
+}
+
+model Rating {
+  id         Int      @id @default(autoincrement())
+  rating     Int
+  comment    String?
+  ticketId   Int      @unique
+  busHouseId Int
+  BusHouse   BusHouse @relation(fields: [busHouseId], references: [id],onDelete: Cascade)
+  Ticket     Ticket   @relation(fields: [ticketId], references: [id],onDelete: Cascade)
+}
+
+model Route {
+  id                                  Int           @id @default(autoincrement())
+  startLocId                          Int
+  endLocId                            Int
+  Location_Route_endLocIdToLocation   Location      @relation("Route_endLocIdToLocation", fields: [endLocId], references: [id],onDelete: Cascade)
+  Location_Route_startLocIdToLocation Location      @relation("Route_startLocIdToLocation", fields: [startLocId], references: [id],onDelete: Cascade)
+  RouteDetail                         RouteDetail[]
+}
+
+model RouteDetail {
+  id         Int      @id @default(autoincrement())
+  busId      Int
+  price      Decimal  @db.Money
+  endTime    DateTime
+  startTime  DateTime
+  remainSeat Int
+  routeId    Int
+  Bus        Bus      @relation(fields: [busId], references: [id],onDelete: Cascade)
+  Route      Route    @relation(fields: [routeId], references: [id],onDelete: Cascade)
+  Ticket     Ticket[]
+}
+
+model Ticket {
+  id            Int          @id @default(autoincrement())
+  comment       String?
+  routeDetailId Int
+  status        TicketStatus @default(WAITING)
+  userId        Int
+  amount Int @default(1)
+  Rating        Rating?
+  RouteDetail   RouteDetail  @relation(fields: [routeDetailId], references: [id],onDelete: Cascade)
+  User          User         @relation(fields: [userId], references: [id],onDelete: Cascade)
+}
+
+model User {
+  id      Int      @id @default(autoincrement())
+  Name    String
+  phone   String?  @db.VarChar(15)
+  isAdmin Boolean  @default(false)
+  email   String?
+  uuid    String
+  Ticket  Ticket[]
+}
+
+model testtable {
+  id      Int  @id @default(autoincrement())
+  randNum Int?
+}
+
+enum TicketStatus {
+  WAITING
+  PAID
+  CANCELED
+  FINISHED
+}

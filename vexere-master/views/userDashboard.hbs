@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="/css/index.css" />
+
+<main>
+  <script src="https://kit.fontawesome.com/3233d35d96.js" crossorigin="anonymous"></script>
+  <script src="/js/UserDashboard/FetchTicket.js" type="module" defer></script>
+    <script type="module" src="/js/UserDashboard/UserDashboard.js" defer></script>
+
+  <div class="container">
+    <div class="sidebar">
+      <div class="user-infor">
+        <img src={{user.picture}} width="64px" height="64px" alt="user-image" class="user-image" />
+        <h6 class="user-login-name inline-block">
+          {{user.name}}
+        </h6>
+      </div>
+      <div class="sidebar-navigation">
+        <ul class="sidebar-list">
+          <li class="list-item active-tab"> <i class="fa-solid fa-user"></i>  Thay đổi thông tin tài khoản</li>
+          <li class="list-item">
+            <i class="fa-solid fa-tags"></i>  Thành viên 
+            <span class="user-rank-span">{{userRank}}</span>
+          </li>
+          <li class="list-item" id="ticket-tab-nav"><i class="fa-solid fa-ticket"></i>  Vé của tôi</li>
+          <li class=""><i class="fa-sharp fa-solid fa-right-from-bracket"></i><a href="/logout" class="logout">  Đăng xuất</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sidebar-display">
+      <div class="sidebar-display-list user-change-acount-information active">
+        <div class="user-change-title">
+          <h2>Hồ sơ của tôi</h2>
+          <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+        </div>
+        <div class="user-change-information-form-layout">
+          <div class="user-change-information-form">
+            <form action="" method="GET">
+              <div>
+                <label for="username">
+                  Tên đăng nhập
+                  <input type="text" name="user-login-name" id="user-login-name" value="{{data.Name}}" />
+                </label>
+                <div class="user-name-display inline-block mgl5"></div>
+              </div>
+              <div>
+                <label for="user-name-display">
+                  Tên
+                  <input type="text" name="user-name-display" id="user-name-display" value="{{data.Name}}" />
+                </label>
+                <div class="user-name-display inline-block mgl5"></div>
+              </div>
+              <div>
+                <label for="user-password">
+                  Mật khẩu
+                  <input type="password" name="user-passowrd" id="user-password" value="hanphu1234" />
+                </label>
+                <div class="user-password inline-block"></div>
+              </div>
+              <div class="test">
+                <label for="email">
+                  Email
+                  <input type="text" name="email" id="email" value="{{data.email}}"
+                    pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address" />
+                </label>
+                <div class="email inline-block"></div>
+              </div>
+              <div>
+                <label for="phone-number">
+                  Số điện thoại
+                  <input type="text" name="phone-number" id="phone-number" value="{{data.phone}}" />
+                </label>
+                <div class="inline-block"></div>
+              </div>
+              <div>
+                <label for="birthday">
+                  <div class="birthday-lable">Ngày sinh</div>
+                  <input type="date" name="birthday" id="birthday" />
+                </label>
+                <div class="inline-block"></div>
+              </div>
+              <div>
+                <button class="save-button">Lưu</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="sidebar-display-list  user-rank-display unactive">
+        <div>
+          <h4 class="rank-display">Bạn hiện đang là thành viên {{userRank}}</h4>
+        </div>
+      </div>
+
+      <div class="sidebar-display-list  user-invoice-ticket-display unactive">
+        <div class="tab">
+          <div>
+            <button class="tab-links" id="ticket-fetch-current">Hiện tại</button>
+            <button class="tab-links" id="ticket-fetch-finished">Đã đi</button>
+            <button class="tab-links" id="ticket-fetch-canceled">Đã huỷ</button>
+          </div>
+
+          <ul class="tab-content active" id="ticket-display-ul">
+            
+          </ul>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

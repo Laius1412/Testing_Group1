@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+body>div {
+  margin: 3rem;
+
+}
+
+body * {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.search_result_container {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  margin-inline: 5rem;
+  column-gap: 3rem;
+}
+
+.search_result_filter>section {
+  margin: 1rem 1rem;
+  max-height: 250px;
+}
+
+.search_result_filter>section>* {
+  max-height: 250px;
+}
+
+.search_result_filter {
+  padding-inline: 0.5rem;
+  background-color: #fefefe;
+  border: 1px solid #C0C0C0;
+  border-radius: 5px;
+  padding: .5em 1em 2em 1em;
+  border-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#price-minmax-label {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+/* filter */
+
+/* Price rage */
+.price-range {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Empty seat */
+#filter_by_empty_seat * {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+#filter_by_empty_seat {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+
+#filter_by_empty_seat_action {
+  justify-self: flex-start;
+}
+
+#filter_by_empty_seat_action * {
+  font-size: larger;
+}
+
+#filter_by_empty_seat_action>button {
+  width: 2rem;
+  height: 2rem;
+  font-weight: bolder;
+  border-radius: 50%;
+}
+
+/* Check boxes */
+#to-check-boxes {
+  height: 100%;
+  /* overflow: scroll; */
+}
+
+#from-check-boxes {
+  height: 100%;
+  /* overflow: scroll; */
+}
+
+two-level-checkbox {
+  display: block;
+}
+
+.js-parent-open {
+  cursor: pointer;
+}
+
+.js-child-ul {
+  /* overflow-y: scroll; */
+  height: 100%;
+}
+
+.js-child-ul>li {
+  margin-left: 2rem;
+}
+
+/* .vexere_bus_image_wrapper {
+  width: 300px;
+} */
+.search_result_display {
+  padding-right: 4.5rem;
+}
+
+.vexere_info_action button {
+  font-family: 'Roboto', sans-serif;
+  background: #ffc700;
+  border: 1px solid #efbd08;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.vexere_info_action>form>button:hover,
+.vexere_info_action>form>button:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #efbd08;
+  transition: 0.2s ease-in-out;
+  transform: scale(1.1);
+}
+
+.vexere_info_action>form>button:active {
+  opacity: .5;
+}
+
+.vexere_info_action>h4>a {
+  color: #3e83e3;
+}
+
+.vexere_info_action>h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vexere_info_action>h4>img {
+  margin-left: .5em;
+  margin-bottom: .2em;
+}
+
+.vexere_info_wrapper {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.vexere_info_wrapper:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+.vexere_info_wrapper:hover {
+  background-color: initial;
+  background-position: 0 0;
+  transition: 0.2s ease-in-out;
+  transform: scale(1.005);
+}
+
+.range-min, .range-max {
+  outline: none;
+  height: 2em;
+  width: 8em;
+  font-size: .9em;
+  border-radius: .2em;
+  margin-left: 1em;
+}
+
+#search-filter-by-bus-house {
+  margin-top: .8em;
+  outline: none;
+  height: 2em;
+  width: 18.2em;
+  font-size: .9em;
+  border-radius: .2em;
+  padding-left: .5rem;
+}
+
+.submit-apply {
+  margin: 1em 0 0 7.5em;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  background: #3e83e3;
+  border: 1px solid #6797bb;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  width: 7em;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.submit-apply:hover,
+.submit-apply:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #6797bb;
+  transition: 0.2s ease-in-out;
+  transform: scale(1.1);
+}
+
+.submit-apply:active {
+  opacity: .5;
+}
+
+input[type=radio] {
+  float: left;
+  height: 16px;
+  width: 16px;
+}
+
+.filter-bus-type label {
+  margin-top: 1em;
+}
+
+.filter-bus-type label p {
+  margin-left: 1.5em;
+}
+
+/* .filter-check-bus {
+  margin-top: 10em;
+} */
+
+.price-range {
+  margin-top: .8em;
+}
+
+.brown {
+  color: #484848;
+}
+
+input[type=checkbox] {
+  height: 16px;
+  width: 16px;
+}

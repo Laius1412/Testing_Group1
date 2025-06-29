@@ -1,0 +1,26 @@
+.ticket-information {
+	padding: 2rem;
+}
+
+.user-information {
+	border: #999 solid 1px;
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+.payment-information {
+	border: #999 solid 1px;
+	border-radius: 10px;
+	margin-top: 1rem;
+	padding: 1rem;
+}
+
+.user-information > .row > h6 {
+	font-size: 0.6rem;
+}
+
+.vl {
+	border-left: 1px solid black;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}

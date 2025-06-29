@@ -1,0 +1,10 @@
+[{"id":1,"remainSeat":19,"routeId":8,"busId":4},
+{"id":2,"remainSeat":18,"routeId":5,"busId":1},
+{"id":3,"remainSeat":15,"routeId":3,"busId":6},
+{"id":4,"remainSeat":40,"routeId":4,"busId":8},
+{"id":5,"remainSeat":33,"routeId":2,"busId":8},
+{"id":6,"remainSeat":19,"routeId":7,"busId":2},
+{"id":7,"remainSeat":38,"routeId":5,"busId":3},
+{"id":8,"remainSeat":26,"routeId":3,"busId":5},
+{"id":9,"remainSeat":40,"routeId":1,"busId":3},
+{"id":10,"remainSeat":17,"routeId":7,"busId":7}]

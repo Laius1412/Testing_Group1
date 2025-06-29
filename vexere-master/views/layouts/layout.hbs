@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{{ title }}</title>
+
+  <link rel="stylesheet" href="/css/global.css">
+
+  <link rel="stylesheet" href={{ cssPath }}>
+
+
+</head>
+
+<body>
+  <nav>
+    <div class="vexere-container">
+      <div class="vexere-nav-container">
+        <div class="nav-logo">
+          <a href="/" class="logo-link">
+            <img src="/assets/icon_vxr_full.svg" alt="Logo" />
+          </a>
+        </div>
+        <div class="nav-links">
+          <ul class="nav-ul">
+            <li class="nav-li-item">
+              <a class="nav-link" target="_blank" aria-current="page" href="https://vexere.com/vn/thue-xe/">Thuê xe</a>
+            </li>
+            <li class="nav-li-item">
+              <a class="nav-link" target="_blank" aria-current="page" href="https://bms.vexere.com/mo-ban-ve-tren-vexere-com?utm_source=vex&utm_medium=header&utme_campaign=referral">Trở thành đối tác</a>
+            </li>
+            <li class="nav-li-item">
+              <a class="nav-link" aria-current="page" href="#">EN</a>
+            </li>
+            <li class="nav-li-item">
+              {{#if userName}}
+              <a class="nav-link active user_loggedin" aria-current="page" href="/user">{{userName}}</a>
+              {{else}}
+              <button class="login-button"><a class="nav-link active login"
+              style="text-decoration:none;" aria-current="page" href="/login">Đăng nhập</a></button>
+              {{/if}}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <section style="min-height:95vh;">
+    {{{body}}}
+  </section>
+
+  <!--footer-->
+  <footer class="container-fluid text-center footer"
+    style="text-align: center;left: 0;bottom: 0;width:100%; background-color: #0a2e5c; color:#fff;">
+    Copyright &copy; 2022 by Group09-20KTPM04
+    <br>
+    CONTACT US:
+    <br>
+    Phone: +84 808 333 333
+    <br>
+    Address: 227 Nguyen Van Cu, District 5, HCMC
+    <br>
+    Email: group09project@gmail.com
+    <br>
+  </footer>
+  <!--/footer-->
+
+</body>
+
+</html>
+</body>

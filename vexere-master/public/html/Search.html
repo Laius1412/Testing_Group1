@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/Search.css" />
+  <link rel="stylesheet" href="/css/ChiTiet.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script> -->
+  <script type="module" src="/js/Filter/Filter.js" defer></script>
+  <script type="module" src="/js/Search/Search.js" defer></script>
+  <!-- <script type="module" src="/js/ChiTiet/ChiTiet.js" defer></script> -->
+  <script src="/js/Main/main.js" defer></script>
+
+</head>
+
+<body>
+
+  <!-- NavBar -->
+  <div style="margin-top: 0;margin-inline:0;">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-light p-3">
+        <div class="container-fluid">
+          <a href="#" class="brand">
+            <img src="/assets/icon_vxr_full.svg" alt="Logo" />
+          </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Thuê xe</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Trở thành đối tác</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">EN</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Đăng nhập</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </div>
+  <!-- /NavBar -->
+
+  <template id="chi-tiet-template">
+    <!-- Cửa sổ thông tin cơ bản -->
+    <div class="vexere_info_wrapper">
+
+      <!-- Hình xe -->
+      <div class="vexere_bus_image_wrapper">
+        <!-- <img src="/assets/bus-img2.png" alt="Hinh xe"> -->
+      </div>
+
+      <!-- Thông tin cơ bản đi đến -->
+      <div>
+        <h3 class="js-bus-house-name"> {Tên Nhà Xe} </h3>
+        <p> <span class="js-bus-type">{Loại xe}</span> - <span class="js-seat-amount">{Số}</span>chỗ</p>
+        <div class="vexere_time_container">
+          <div class="vexere_departure_icon">
+            <div>
+              <img style="width: 100%;" src="/assets/from-icon.png" alt="icon" />
+            </div>
+            <div style="flex:1; display:flex; align-items: center;">
+              <img style="width: 100%;" src="/assets/dot-line.png" alt="icon" />
+            </div>
+            <div>
+              <img style="width: 100%;" src="/assets/to-icon.png" alt="icon" />
+            </div>
+          </div>
+          <div>
+            <h3 class="js-from-time">{Giờ khởi hành}</h3>
+            <p class="js-from-location">{Địa điểm đón}</p>
+          </div>
+          <div>
+            <h3 class="js-to-time">{Giờ tới nơi}</h3>
+            <p class="js-to-location">{Địa điểm trả}</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Giá và chi tiết -->
+      <div class="vexere_gia_brief_info">
+        <h3 class="js-ticket-price">Từ 300,000 VND</h3>
+        <div>
+          <h3><span class="js-empty-seat">{Số chỗ còn trống}</span> chỗ còn trống</h3>
+        </div>
+        <div class="vexere_info_action">
+          <h4>Thông tin chi tiết 🔽</h4>
+          <button>Đặt vé</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bảng thông tin chi tiết -->
+    <div class="vexere_detail_info_container">
+      <div class="vexere_detail_info_select_tab">
+        <button value="0">Hình xe</button>
+        <button value="1">Tiện ích</button>
+        <button value="2">Đón trả</button>
+        <button value="3">Chính sách</button>
+        <button value="4">Đánh giá</button>
+      </div>
+
+      <!-- Hình xe -->
+      <div class="vexere_bus_image_slider_wrapper js_vexere_detail_tab_item">
+        <div class="vexere_bus_image_slider">
+
+        </div>
+      </div>
+
+      <!-- Tiện ích nhà xe  -->
+      <div class="vexere_utility_wrapper js_vexere_detail_tab_item">
+        <ul class="vexere_utility_list">
+          <li>
+            <h3>🚽 Toilet</h3>
+            <p>Nhà vệ sinh trên xe</p>
+          </li>
+          <li>
+            <h3>🧼 Khử khuẩn</h3>
+            <p>Nhà xe có thực hiện phun khử trùng Nano Bạc lên xe nhằm bảo vệ an toàn cho hành khách mùa Covid</p>
+          </li>
+          <li>
+            <h3>🧴 Nước rửa tay</h3>
+            <p>Nhà xe có trang bị nước rửa tay diệt khuẩn trước khi lên xe và trong xe</p>
+          </li>
+          <li>
+            <h3>🌡️ Đo thân nhiệt</h3>
+            <p>Hành khách sẽ được đo thân nhiệt trước khi lên xe để xác định không nghi nhiễm/ lan truyền vi rút
+              Covid cho hành khách khác.</p>
+          </li>
+          <li>
+            <h3>😷 Khuyến cáo đeo khẩu trang</h3>
+            <p>Có đảm bảo khuyến cáo tất cả hành khách đeo khẩu trang khi lên xe.</p>
+          </li>
+          <li>
+            <h3>🥤 Nước uống</h3>
+            <p>Nhà xe có phục vụ nước cho hành khách.</p>
+          </li>
+          <li>
+            <h3>🔨 Búa phá kính</h3>
+            <p>Dùng để phá kính ô tô thoát hiểm trong trường hợp khẩn cấp.</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Điểm đón trả -->
+      <div class="vexere_from_to_detail_wrapper js_vexere_detail_tab_item">
+        <p>
+          Lưu ý
+          Các mốc thời gian đón, trả bên dưới là thời gian dự kiến.
+          Lịch này có thể thay đổi tùy tình hình thưc tế.
+        </p>
+
+        <ul class="js_vexere_detail_from_list">
+        </ul>
+
+        <ul class="js_vexere_detail_to_list">
+        </ul>
+      </div>
+
+      <!-- chính sách -->
+      <div class="vexere_terms_details js_vexere_detail_tab_item">
+        <h2>Chính sách hủy vé</h2>
+        <p><strong>Ghi Chú :</strong>Phí huỷ sẽ được tính trên giá gốc, không giảm trừ khuyến mãi hoặc giảm giá; đồng
+          thời không vượt quá số tiền quý khách đã thanh toán. </p>
+        <hr>
+        <h2>Chính sách nhà xe</h2>
+
+        <h3>Yêu cầu khi lên xe</h3>
+        <ul>
+          <li>
+            Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe
+          </li>
+          <li>
+            Đổi vé giấy trước khi lên xe
+          </li>
+          <li>
+            Xuất trình SMS/Email đặt vé trước khi lên xe
+          </li>
+          <li>
+            Không mang đồ ăn, thức ăn có mùi lên xe
+          </li>
+          <li>
+            Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe
+          </li>
+          <li>
+            Không mang các vật dễ cháy nổ lên xe
+          </li>
+          <li>
+            Không vứt rác trên xe
+          </li>
+          <li>
+            Không làm ồn, gây mất trật tự trên xe
+          </li>
+          <li>
+            Không mang giày, dép trên xe
+          </li>
+        </ul>
+
+        <h3>Hành lý xách tay</h3>
+        <ul>
+          <li>
+            Tổng trọng lượng hành lý không vượt quá 20 kg
+          </li>
+          <li>
+            Không vận chuyển hàng hóa cồng kềnh
+          </li>
+          <li>
+            Không hoàn tiền trong trường hợp hủy vé do vi phạm các quy định về hành lý
+          </li>
+        </ul>
+
+        <h3>Trẻ em và phụ nữ có thai</h3>
+        <ul>
+          <li>
+            Trẻ em dưới 5 tuổi hoặc dưới 100 cm được miễn phí vé nếu ngồi cùng ghế/giường với bố mẹ
+          </li>
+          <li>
+            Trẻ em từ 6 tuổi hoặc cao từ 120 cm trở lên mua vé như người lớn
+          </li>
+          <li>
+            Phụ nữ có thai cần đảm bảo sức khỏe trong suốt quá trình di chuyển
+          </li>
+          <li>
+            Nhà xe có quyền từ chối phục vụ nếu hành khách không tuân thủ quy định về trẻ em và phụ nữ có thai
+          </li>
+        </ul>
+
+        <h3>Động vật cảnh/Thú cưng</h3>
+        <ul>
+          <li>
+            Hãng xe chỉ chấp nhận vận chuyển động vật như là một hành lý ký gửi; không cho phép mang lên xe cùng hành
+            khách
+          </li>
+          <li>
+            Nhiệt độ thời tiết trong quá trình vận chuyển đôi khi ảnh hưởng đến sức khỏe của động vật cảnh, nhà xe không
+            chịu trách nhiệm về sức khỏe động vật trong suốt chuyến đi
+          </li>
+        </ul>
+
+        <h3>Xuất hóa đơn GTGT</h3>
+        <ul>
+          <li>
+            Nhà xe có cung cấp hóa đơn GTGT cho vé, phí xuất hóa đơn là 10 % trên giá vé quý khách đã mua
+          </li>
+          <li>
+            Quý khách vui lòng cung cấp đầy đủ, chính xác thông tin hóa đơn
+          </li>
+          <li>
+            Nhà xe từ chối xuất lại hóa đơn nếu hành khách cung cấp sai thông tin
+          </li>
+        </ul>
+      </div>
+
+      <!-- Đánh giá -->
+      <div class="vexere_rating_wrapper js_vexere_detail_tab_item">
+        <section class="vexere_rating_item">
+          <div class="review_info">
+            <img style="width: 100%;" src="/assets/default-profile.png" />
+            <h3>Hoàng Lâm :))</h3>
+            <span>⭐⭐⭐⭐⭐(5/5)</span>
+          </div>
+          <div>
+            <hr style="margin: 0.5rem;">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic accusamus mollitia, labore ab iusto fuga vero
+              sapiente. Harum, laborum error!
+            </p>
+          </div>
+        </section>
+        <section class="vexere_rating_item">
+          <div class="review_info">
+            <img style="width: 100%;" src="/assets/default-profile.png" />
+            <h3>Hoàng Lâm :))</h3>
+            <span>⭐⭐⭐⭐⭐(5/5)</span>
+          </div>
+          <div>
+            <hr style="margin: 0.5rem;">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic accusamus mollitia, labore ab iusto fuga vero
+              sapiente. Harum, laborum error!
+            </p>
+          </div>
+        </section>
+        <section class="vexere_rating_item">
+          <div class="review_info">
+            <img style="width: 100%;" src="/assets/default-profile.png" />
+            <h3>Hoàng Lâm :))</h3>
+            <span>⭐⭐⭐⭐⭐(5/5)</span>
+          </div>
+          <div>
+            <hr style="margin: 0.5rem;">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic accusamus mollitia, labore ab iusto fuga vero
+              sapiente. Harum, laborum error!
+            </p>
+          </div>
+        </section>
+        <section class="vexere_rating_item">
+          <div class="review_info">
+            <img style="width: 100%;" src="/assets/default-profile.png" />
+            <h3>Hoàng Lâm :))</h3>
+            <span>⭐⭐⭐⭐⭐(5/5)</span>
+          </div>
+          <div>
+            <hr style="margin: 0.5rem;">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic accusamus mollitia, labore ab iusto fuga vero
+              sapiente. Harum, laborum error!
+            </p>
+          </div>
+        </section>
+        <section class="vexere_rating_item">
+          <div class="review_info">
+            <img style="width: 100%;" src="/assets/default-profile.png" />
+            <h3>Hoàng Lâm :))</h3>
+            <span>⭐⭐⭐⭐⭐(5/5)</span>
+          </div>
+          <div>
+            <hr style="margin: 0.5rem;">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic accusamus mollitia, labore ab iusto fuga vero
+              sapiente. Harum, laborum error!
+            </p>
+          </div>
+        </section>
+        <section class="vexere_rating_item">
+          <div class="review_info">
+            <img style="width: 100%;" src="/assets/default-profile.png" />
+            <h3>Hoàng Lâm :))</h3>
+            <span>⭐⭐⭐⭐⭐(5/5)</span>
+          </div>
+          <div>
+            <hr style="margin: 0.5rem;">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic accusamus mollitia, labore ab iusto fuga vero
+              sapiente. Harum, laborum error!
+            </p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Bảng thanh toán -->
+    <div class="vexere_checkout_container">
+
+      <!-- Chọn chỗ -->
+      <section class="vexere_checout_seat_select js_checkout_item">
+        <div class="vexere_checout_seat_select_instruction">
+          <p>🟥: Chỗ không được chọn </p>
+          <p>🟦: Chỗ được chọn (<span class="js_seat_price">300000</span> VND)</p>
+          <p>🟩: Chỗ bạn đã chọn</p>
+        </div>
+        <div class="vexere_checout_seat_select_action">
+
+        </div>
+        <div>
+
+        </div>
+      </section>
+
+      <!-- Chọn vị trí đón trả-->
+      <section class="vexere_checkout_location_select js_checkout_item">
+        <section>
+          <h3>Điểm đón</h3>
+          <ul class="vexere_checkout_from_location">
+
+          </ul>
+        </section>
+        
+        <section>
+          <h3>Điểm Trả</h3>
+          <ul class="vexere_checkout_to_location">
+
+          </ul>
+        </section>
+        
+      </section>
+
+      <!-- Thông tin người đặt -->
+      <section class="vexere_checkout_info_select js_checkout_item">
+        <h3>Thông tin</h3>
+        <form onsubmit="(event)=>{event.preventDefault()}">
+          <label>Họ Tên
+            <input type="text" name="checkout_name" required/>
+          </label>
+          <label>Số điện thoại
+            <input type="text" name="checkout_name" required/>
+          </label>
+          <label>Email
+            <input type="text" name="checkout_name" required/>
+          </label>
+          <label>Lưu ý thêm cho nhân viên
+            <textarea rows="5" cols="12"></textarea>
+          </label>
+        </form>
+      </section>
+
+      <!-- NAV -->
+      <section class="vexere_checkout_nav js_checkout_action">
+        <button value="-1">Back</button>
+        <p>Ghế <span class="js_checkout_seat"></span></p>
+        <p>Tổng cộng: <span class="js_checkout_price">0</span>đ</p>
+        <button value="1">Next</button>
+      </section>
+    </div>
+  </template>
+
+  <template id="two-level-checkbox-template">
+    <span class="js-parent-open">▶️</span>
+    <label class="js-parent-container">
+      <input type="checkbox" />
+      <span class="js-parent-name"></span>
+    </label>
+    <ul class="js-child-ul">
+
+    </ul>
+  </template>
+
+  <div>
+    <h3> Vé xe khách > xe đi Hà Nội từ Lào Cai > xe đi Hà Nội từ Sa Pa</h3>
+  </div>
+
+  <div class="search_bar container">
+    <table>
+      <thead>
+        <tr>
+          <td>
+            <div style="width:100%" class="btn btn-light start col-4 py-3 completeIt">
+              <input type="text" class="bg-light form-control border-0" id="start-place" placeholder="Điểm đi"
+                autocomplete="off" autofocus />
+          </td>
+
+          <td>
+            <div class="btn btn-light end col-4 py-3">
+              <input type="text" placeholder="Điểm đến" class="bg-light form-control border-0" id="end-place"
+                autocomplete="off" autofocus />
+          </td>
+
+          <td>
+            <div class="btn btn-light date col-2 py-3">
+              <input type="date" placeholder="Ngay khoi hanh" class="bg-light border-0 form-control" />
+            </div>
+          </td>
+
+          <td>
+            <div class="btn btn-warning submit col-2 py-3 text-center">
+              <a href="#" class="form-control bg-warning border-0">Tìm vé</a>
+            </div>
+          </td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>
+            <div class="auto_complete_place" id="auto-complete-start">
+            </div>
+          </td>
+          <td>
+            <div class="auto_complete_place" id="auto-complete-end">
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- main -->
+  <div class="search_result_container">
+    <section class="search_result_filter">
+      <!-- Price range -->
+      <section>
+        <label style="width: 100%;">
+          <div id="price-label">Giá vé</div>
+
+          <div class="range-input">
+            <input id="min-price-slider" type="range" class="range-min" min="0" max="2000000" step="1000">
+            <input id="max-price-slider" type="range" class="range-max" min="0" max="2000000" step="1000">
+          </div>
+
+          <div id="price-minmax-label">
+            <span style="text-align: left;">₫0</span>
+            <span style="text-align: right;">₫2000000</span>
+          </div>
+        </label>
+      </section>
+
+      <!--Seats -->
+      <section id="filter_by_empty_seat">
+        <h4>Số ghế trống: </h4>
+        <span id="filter_by_empty_seat_action">
+          <button value="1">+</button>
+          <span>0</span>
+          <button value="-1">-</button>
+        </span>
+      </section>
+
+      <!-- Bus House -->
+      <section>
+        <label>Nhà xe
+          <input type="text" id="search-filter-by-bus-house" />
+        </label>
+        <ul>
+          <li><label>
+              <input type="checkbox" name="busHouse" value="Bảo Yến" />
+              Bảo Yến
+            </label></li>
+
+          <li><label>
+              <input type="checkbox" name="busHouse" value="Dream Transport Limousine" />
+              Dream Transport Limousine
+            </label></li>
+
+          <li><label>
+              <input type="checkbox" name="busHouse" value="Daily Limousine" />
+              Daily Limousine
+            </label></li>
+
+          <li><label>
+              <input type="checkbox" name="busHouse" value="Đức Minh Travel" />
+              Đức Minh Travel
+          </li></label>
+
+          <li><label>
+              <input type="checkbox" name="busHouse" value="Đức Minh Travel" />
+              Fancipan Express Bus
+          </li></label>
+
+          <li><label>
+              <input type="checkbox" name="busHouse" value="Đức Minh Travel" />
+              G80 Open Tour
+          </li></label>
+
+          <li><label>
+              <input type="checkbox" name="busHouse" value="Đức Minh Travel" />
+              Green Bus
+          </li></label>
+
+          <li><label>
+              <input type="checkbox" name="busHouse" value="Đức Minh Travel" />
+              Hà Sơn (Hà Tĩnh - Sapa)
+          </li></label>
+        </ul>
+      </section>
+
+      <!-- Pick up location -->
+      <section>
+        <label>Điểm đón
+          <input type="text" id="search-filter-by-from" />
+        </label>
+        <section id="from-check-boxes">
+
+        </section>
+      </section>
+
+      <!-- Get off location -->
+      <section>
+        <label>Điểm trả
+          <input type="text" id="search-filter-by-to" />
+        </label>
+        <section id="to-check-boxes">
+
+        </section>
+      </section>
+
+
+    </section>
+
+    <section id="search_result_display" class="search_result_display">
+
+    </section>
+  </div>
+  <!-- /main -->
+
+
+</body>
+
+</html>

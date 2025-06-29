@@ -1,0 +1,301 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+<link rel="stylesheet" href="/css/index.css"/>
+<script src="/js/Index/index.js" defer></script>
+
+<main>
+  <section id="banner" class="container-fluid">
+    <p class="text-center text-light display-6 fw-bolder text_slogan">
+      VeXeRe - Cam kết hoàn 150% nếu nhà xe không giữ vé
+    </p>
+    <form method="get" action="/search" class="search_bar container">
+      <table>
+        <thead>
+          <tr>
+            <td>
+              <div style="width: 100%" class="btn btn-light start col-4 py-3 rounded-0 rounded-start pick-up">
+                <img src="/assets/pickup_vex_blue_24dp.svg" alt="pickup">
+                <input name="fromId" type="text" class="bg-light form-control border-0" id="start-place"
+                  placeholder="Điểm đi" autocomplete="off" required />
+              </div>
+            </td>
+
+            <td>
+              <div class="btn btn-light end col-4 py-3 rounded-0 pick-up">
+                <img src="/assets/pickup_negative_24dp.svg" alt="pickup">
+                <input name="toId" type="text" placeholder="Điểm đến" class="bg-light form-control border-0"
+                  id="end-place" autocomplete="off" required />
+              </div>
+            </td>
+
+            <td>
+              <div class="btn btn-light date col-2 py-3 rounded-0 ">
+                {{!-- <img src="/assets/pickdate_vex_blue_24dp.svg" alt="pickup"> --}}
+                <input id="start-date-input" type="date" name="date" placeholder="Ngày khởi hành"
+                  class="bg-light border-0 form-control" required />
+              </div>
+            </td>
+            <td style="background-color: #ffd333; border-end-end-radius: 50px; border-start-end-radius: 50px;">
+              <div class="search_div" style="display: flex; justify-content:center;">
+                <button style="margin-top:.8em; background-color: #ffd333; border: none; padding:0 2rem" class="vexere_search_btn" type="submit"><p>Tìm chuyến</p></button>  
+              </div>
+            </td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              <div id="auto-complete-start" class="auto_complete_place">
+                <ul class="start-locations-list">
+                  {{#each locations }}
+                  <li value={{this.id}}>{{ this.name }}</li>
+                  {{/each}}
+                </ul>
+              </div>
+            </td>
+            <td>
+              <div id="auto-complete-end" class="auto_complete_place">
+                <ul class="end-locations-list">
+                  {{#each locations }}
+                  <li value={{this.id}}>{{ this.name }}</li>
+                  {{/each}}
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </section>
+
+  <section id="routes">
+    <div class="container mt-5">
+      <h4 class="">Tuyến đường phổ biến</h4>
+
+      <div class="row row-horizon flex-nowrap flex-row overflow-auto">
+        {{#each routes}}
+        <div class="col-3">
+          <div class="card h-100">
+            <img src="/assets/img_card_route_1.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{ title }}</h5>
+              <p class="card-text">{{ price }}</p>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="user-vouchers">
+    <div class="container mt-5">
+      <h4 class="">Ưu đãi nổi bật</h4>
+
+      <div class="row row-horizon flex-nowrap flex-row overflow-auto">
+        {{#each userVouchers}}
+        <div class="col-3">
+          <div class="card h-100">
+            <img src={{imageUrl}} class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{ title }}</h5>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="sponsor-vouchers">
+    <div class="container mt-5">
+      <h4 class="">Ưu đãi từ đối tác VeXeRe</h4>
+
+      <div class="row row-horizon flex-nowrap flex-row overflow-auto">
+        {{#each sponsorVouchers}}
+        <div class="col-3">
+          <div class="card h-100">
+            <img src={{imageUrl}} class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{title}}</h5>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="car-house-vouchers">
+    <div class="container mt-5">
+      <h4>Dành cho đối tác nhà xe</h4>
+      <div class="row row-horizon flex-nowrap flex-row overflow-auto">
+
+        {{#each carHouseVouchers}}
+        <div class="col-3">
+          <div class="card h-100">
+            <img src="/assets/img_card_deal_agency_2.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">
+                Ưu đãi cho nhà xe
+              </h5>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="container-fluid mt-5 other-links">
+  <div class="container pt-5 pb-3">
+    <div class="row" id="footer_row_2">
+      <div class="news col-6">
+        <h5>Tin tức</h5>
+        <div class="links">
+          <ul>
+
+            {{#each news}}
+            <li>
+              <a href="#" class="link-dark"> Xe giường nằm Limousine – đỉnh cao
+                mới của ngành xe khách</a>
+            </li>
+            {{/each}}
+
+          </ul>
+        </div>
+      </div>
+      <div class="route col-3">
+        <h5>Tuyến đường</h5>
+        <div class="links">
+          <ul>
+            {{#each routes}}
+            <li>
+              <a href="#" class="link-dark">Xe đi Buôn Mê Thuột từ Sài Gòn</a>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+      <div class="limousine col-3">
+        <h5>Xe Limousine</h5>
+        <div class="links">
+          <ul>
+            {{#each limousines}}
+            <li>
+              <a href="#" class="link-dark">Xe Limousine đi Đà Lạt từ Sài
+                Gòn</a>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="footer_row_1">
+      <div class="station col-3">
+        <h5>Bến xe</h5>
+        <div class="links">
+          <ul>
+            {{#each stations}}
+            <li>
+              <a href="#" class="link-dark">Bến xe Miền Đông</a>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+
+      <div class="car-service col-9">
+        <h5>Nhà xe</h5>
+        <ul>
+          {{#each busHouses}}
+          <li>
+            <a href="#" class="link-dark">Nhà xe Miền Đông</a>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+    <div class="row" id="footer_row_3">
+      <div class="about col-3">
+        <h5>Về chúng tôi</h5>
+        <div class="links">
+          <ul>
+            <li>
+              <a href="#" class="link-dark">Tuyển dụng</a>
+            </li>
+            <li>
+              <a href="#" class="link-dark">Tin tức</a>
+            </li>
+            <li>
+              <a href="#" class="link-dark">Hỗ trợ</a>
+            </li>
+            <li>
+              <a href="#" class="link-dark">Hướng dẫn thanh toán</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="support col-3">
+        <h5>Hỗ trợ</h5>
+        <div class="links">
+          <ul>
+            <li>
+              <a href="#" class="link-dark">Tuyển dụng</a>
+            </li>
+            <li>
+              <a href="#" class="link-dark">Tin tức</a>
+            </li>
+            <li>
+              <a href="#" class="link-dark">Hỗ trợ</a>
+            </li>
+            <li>
+              <a href="#" class="link-dark">Hướng dẫn thanh toán</a>
+            </li>
+            <li>
+              <a href="#" class="link-dark">Quy chế VeXeRe.com</a>
+            </li>
+            <li>
+              <a href="#" class="link-dark">Chính sách bảo mật thông tin</a>
+            </li>
+            <li>
+              <a href="#" class="link-dark">Chính sách bảo mật thanh toán</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="certificate col-3">
+        <h5>Chứng nhận</h5>
+        <ul>
+          <li>
+            <img src="/assets/certificate0.png" alt="certificate-0" />
+          </li>
+          <li>
+            <img src="/assets/certificate1.png" alt="certificate-0" />
+          </li>
+          <li>
+            <img src="/assets/dangkybocongthuong.png" alt="certificate-0" />
+          </li>
+        </ul>
+      </div>
+      <div class="platform col-3">
+        <h5>Các nền tảng khác</h5>
+        <ul>
+          <li>
+            <img src="/assets/AP-icon.png" alt="appstore" style="width: 50%" />
+          </li>
+          <li>
+            <img src="/assets/GP-icon.png" alt="googleplay" style="width: 50%" />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

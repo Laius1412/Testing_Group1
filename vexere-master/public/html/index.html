@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Trang chủ</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+			crossorigin="anonymous"
+		/>
+
+		<link rel="stylesheet" href="/public/css/main.css" />
+		<link rel="stylesheet" href="/css/main.css" />
+	</head>
+
+	<body>
+		<script src="/js/Main/main.js" defer></script>
+
+		<header>
+			<nav class="navbar navbar-expand-lg bg-light p-3">
+				<div class="container-fluid">
+					<a href="#" class="brand">
+						<img src="/assets/icon_vxr_full.svg" alt="Logo" />
+					</a>
+
+					<div
+						class="collapse navbar-collapse"
+						id="navbarSupportedContent"
+					>
+						<div
+							class="collapse navbar-collapse"
+							id="navbarSupportedContent"
+						>
+							<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+								<li class="nav-item">
+									<a
+										class="nav-link"
+										aria-current="page"
+										href="#"
+										>Thuê xe</a
+									>
+								</li>
+								<li class="nav-item">
+									<a
+										class="nav-link"
+										aria-current="page"
+										href="#"
+										>Trở thành đối tác</a
+									>
+								</li>
+								<li class="nav-item">
+									<a
+										class="nav-link"
+										aria-current="page"
+										href="#"
+										>EN</a
+									>
+								</li>
+								<li class="nav-item">
+									<a
+										class="nav-link active"
+										aria-current="page"
+										href="#"
+										>Đăng nhập</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<section id="banner" class="container-fluid">
+				<p class="text-center text-light display-6 fw-bolder">
+					VeXeRe - Cam kết hoàn 150% nếu nhà xe không giữ vé
+				</p>
+				<div class="search_bar container">
+					<table>
+						<thead>
+							<tr>
+								<td>
+									<div
+										style="width: 100%"
+										class="btn btn-light start col-4 py-3 rounded-0 rounded-start"
+									>
+										<input
+											type="text"
+											class="bg-light form-control border-0"
+											id="start-place"
+											placeholder="Điểm đi"
+											autocomplete="off"
+											autofocus
+										/>
+									</div>
+								</td>
+
+								<td>
+									<div
+										class="btn btn-light end col-4 py-3 rounded-0"
+									>
+										<input
+											type="text"
+											placeholder="Điểm đến"
+											class="bg-light form-control border-0"
+											id="end-place"
+											autocomplete="off"
+											autofocus
+										/>
+									</div>
+								</td>
+
+								<td>
+									<div
+										class="btn btn-light date col-2 py-3 rounded-0"
+									>
+										<input
+											type="date"
+											placeholder="Ngay khoi hanh"
+											class="bg-light border-0 form-control"
+										/>
+									</div>
+								</td>
+								<td>
+									<div
+										class="btn btn-warning submit col-2 py-3 text-center rounded-0 rounded-end"
+									>
+										<a
+											href="#"
+											class="form-control bg-warning border-0 text-decoration-none"
+											>Tìm vé</a
+										>
+									</div>
+								</td>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>
+									<div
+										class="auto_complete_place"
+										id="auto-complete-start"
+									></div>
+								</td>
+								<td>
+									<div
+										class="auto_complete_place"
+										id="auto-complete-end"
+									></div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section id="routes">
+				<div class="container mt-5">
+					<h4 class="">Tuyến đường phổ biến</h4>
+
+					<div
+						class="row row-horizon flex-nowrap flex-row overflow-auto"
+					>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_route_1.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">Sài Gòn - Đà Lạt</h5>
+									<p class="card-text">Từ 200.000đ</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_route_2.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">
+										Sài Gòn - Nha Trang
+									</h5>
+									<p class="card-text">Từ 230.000đ</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_route_3.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">
+										Sài Gòn - Phan Thiết
+									</h5>
+									<p class="card-text">Từ 160.000đ</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_route_4.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">
+										Nha Tràng - Sài Gòn
+									</h5>
+									<p class="card-text">Từ 230.000đ</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="vouchers">
+				<div class="container mt-5">
+					<h4 class="">Ưu đãi nổi bật</h4>
+
+					<div
+						class="row row-horizon flex-nowrap flex-row overflow-auto"
+					>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_deal_1.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">Hot deal</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_deal_2.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">Hot deal</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_deal_1.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">Hot deal</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_deal_2.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">Hot deal</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="agency-vouchers">
+				<div class="container mt-5">
+					<h4 class="">Ưu đãi từ đối tác VeXeRe</h4>
+
+					<div
+						class="row row-horizon flex-nowrap flex-row overflow-auto"
+					>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_deal_sponsor_1.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">Ưu đãi đối tác</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_deal_sponsor_2.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">Ưu đãi đối tác</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_deal_sponsor_3.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">Ưu đãi đối tác</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_deal_agency_1.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">Ưu đãi đối tác</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="agency-information">
+				<div class="container mt-5">
+					<h4>Dành cho đối tác nhà xe</h4>
+					<div
+						class="row row-horizon flex-nowrap flex-row overflow-auto"
+					>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_deal_agency_2.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">
+										Ưu đãi cho nhà xe
+									</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_deal_agency_1.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">
+										Ưu đãi cho nhà xe
+									</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_deal_sponsor_2.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">
+										Ưu đãi cho nhà xe
+									</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card h-100">
+								<img
+									src="/assets/img_card_deal_sponsor_3.png"
+									class="card-img-top"
+									alt="..."
+								/>
+								<div class="card-body">
+									<h5 class="card-title">
+										Ưu đãi cho nhà xe
+									</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<div class="container-fluid mt-5 bg-secondary">
+				<div class="container pt-5 pb-3">
+					<div class="row" id="footer_row_2">
+						<div class="news col-6">
+							<h5>Tin tức</h5>
+							<div class="links">
+								<ul>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe giường nằm Limousine – đỉnh cao
+											mới của ngành xe khách</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe limousine đi Vũng Tàu: Tổng hợp
+											top 6 xe chất lượng cao</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Review xe limousine đi Đà Lạt:
+											những câu hỏi thường gặp</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe limousine đi Sapa: Tổng hợp top
+											các hãng xe chất lượng cao</a
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="route col-3">
+							<h5>Tuyến đường</h5>
+							<div class="links">
+								<ul>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe đi Buôn Mê Thuột từ Sài Gòn</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe đi Vũng Tàu từ Sài Gòn</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe đi Nha Trang từ Sài Gòn</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe đi Đà Lạt từ Sài Gòn</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe đi Sapa từ Hà Nội</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe đi Hải Phòng từ Hà Nội</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe đi Vinh từ Hà Nội</a
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="limousine col-3">
+							<h5>Xe Limousine</h5>
+							<div class="links">
+								<ul>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe Limousine đi Đà Lạt từ Sài
+											Gòn</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe Limousine đi Vũng Tàu từ Sài
+											Gòn</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe Limousine đi Nha Trang từ Sài
+											Gòn</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe Limousine đi Hải Phòng từ Hà
+											Nội</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe Limousine đi Hạ Long từ Hà
+											Nội</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe Limousine đi Sapa Từ Hà Nội</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Xe Limousine đi Quảng Ninh từ Hà
+											Nội</a
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="row" id="footer_row_1">
+						<div class="station col-3">
+							<h5>Bến xe</h5>
+							<div class="links">
+								<ul>
+									<li>
+										<a href="#" class="link-dark"
+											>Bến xe Miền Đông</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Bến xe Trung tâm Đà Nẵng</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Bến xe Miền Tây</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Bến xe Gia Lâm</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Bến xe Mỹ Đình</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Bến xe An Sương</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Bến xe Nước Ngầm</a
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="car-service col-9">
+							<h5>Nhà xe</h5>
+							<ul>
+								<li>
+									<a href="#" class="link-dark"
+										>Nhà xe Miền Đông</a
+									>
+								</li>
+								<li>
+									<a href="#" class="link-dark"
+										>Nhà xe Trung tâm Đà Nẵng</a
+									>
+								</li>
+								<li>
+									<a href="#" class="link-dark"
+										>Nhà xe Miền Tây</a
+									>
+								</li>
+								<li>
+									<a href="#" class="link-dark"
+										>Nhà xe Gia Lâm</a
+									>
+								</li>
+								<li>
+									<a href="#" class="link-dark"
+										>Nhà xe Mỹ Đình</a
+									>
+								</li>
+								<li>
+									<a href="#" class="link-dark"
+										>Nhà xe An Sương</a
+									>
+								</li>
+								<li>
+									<a href="#" class="link-dark"
+										>Bến xe Nước Ngầm</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row" id="footer_row_3">
+						<div class="about col-3">
+							<h5>Về chúng tôi</h5>
+							<div class="links">
+								<ul>
+									<li>
+										<a href="#" class="link-dark"
+											>Tuyển dụng</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Tin tức</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark">Hỗ trợ</a>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Hướng dẫn thanh toán</a
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="support col-3">
+							<h5>Hỗ trợ</h5>
+							<div class="links">
+								<ul>
+									<li>
+										<a href="#" class="link-dark"
+											>Tuyển dụng</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Tin tức</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark">Hỗ trợ</a>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Hướng dẫn thanh toán</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Quy chế VeXeRe.com</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Chính sách bảo mật thông tin</a
+										>
+									</li>
+									<li>
+										<a href="#" class="link-dark"
+											>Chính sách bảo mật thanh toán</a
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="certificate col-3">
+							<h5>Chứng nhận</h5>
+
+							<ul>
+								<li>
+									<img
+										src="/assets/certificate0.png"
+										alt="certificate-0"
+									/>
+								</li>
+								<li>
+									<img
+										src="/assets/certificate1.png"
+										alt="certificate-0"
+									/>
+								</li>
+								<li>
+									<img
+										src="/assets/dangkybocongthuong.png"
+										alt="certificate-0"
+									/>
+								</li>
+							</ul>
+						</div>
+						<div class="platform col-3">
+							<h5>Các nền tảng khác</h5>
+
+							<ul>
+								<li>
+									<img
+										src="/assets/AP-icon.png"
+										alt="appstore"
+										style="width: 50%"
+									/>
+								</li>
+								<li>
+									<img
+										src="/assets/GP-icon.png"
+										alt="googleplay"
+										style="width: 50%"
+									/>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

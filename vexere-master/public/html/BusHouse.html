@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <script type="module" src="/js/BusHouse/BusHouse.js" defer></script>
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/BusHouse.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+
+
+</head>
+
+<body>
+
+  <!-- NavBar -->
+  <div style="margin-top: 0;margin-inline:0;">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-light p-3">
+        <div class="container-fluid">
+          <a href="#" class="brand">
+            <img src="/assets/icon_vxr_full.svg" alt="Logo" />
+          </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Thuê xe</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Trở thành đối tác</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">EN</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Đăng nhập</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </div>
+  <!-- /NavBar -->
+
+  <!-- search_bar -->
+  <div class="search_bar container">
+    <table>
+      <thead>
+        <tr>
+          <td>
+            <div style="width:100%" class="btn btn-light start col-4 py-3 completeIt">
+              <input type="text" class="bg-light form-control border-0" id="start-place" placeholder="Điểm đi"
+                autocomplete="off" autofocus />
+          </td>
+
+          <td>
+            <div class="btn btn-light end col-4 py-3">
+              <input type="text" placeholder="Điểm đến" class="bg-light form-control border-0" id="end-place"
+                autocomplete="off" autofocus />
+          </td>
+
+          <td>
+            <div class="btn btn-light date col-2 py-3">
+              <input type="date" placeholder="Ngay khoi hanh" class="bg-light border-0 form-control" />
+            </div>
+          </td>
+
+          <td>
+            <div class="btn btn-warning submit col-2 py-3 text-center">
+              <a href="#" class="form-control bg-warning border-0">Tìm vé</a>
+            </div>
+          </td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>
+            <div class="auto_complete_place" id="auto-complete-start">
+            </div>
+          </td>
+          <td>
+            <div class="auto_complete_place" id="auto-complete-end">
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- /search_bar -->
+
+  <!-- info -->
+  <section id="bus_house_info_wrapper">
+    <section id="bus_house_sub_info">
+      <h3>Xe Sao Việt</h3>
+      <section id="bus_house_image">
+        <div class="bus_img_slide">
+          <img alt="bus image">
+          <img alt="bus image">
+          <img alt="bus image">
+          <img alt="bus image">
+          <img alt="bus image">
+        </div>
+      </section>
+    </section>
+
+
+    <section id="bus_house_main_info">
+
+      <section id="bus_house_info_nav">
+        <div class="js_bus_house_info_nav">
+          <h4>Giới thiệu</h4>
+        </div>
+        <div class="js_bus_house_info_nav">
+          <h4>Số điện thoại</h4>
+        </div>
+        <div class="js_bus_house_info_nav">
+          <h4>Đánh giá</h4>
+        </div>
+      </section>
+
+      <section id="bus_house_info">
+        <section class="bus_house_introduction js_bus_house_info_item">
+
+          <!-- Thông tin chung -->
+          <div>
+            <h5>Thông tin xe Sao Việt </h5>
+            <p>Xe Sao Việt đi Sapa có trang thiết bị hiện đại, dàn xe giường nằm mới đẹp, các tuyến đường tập trung ở
+              Tây Bắc. Với quan niệm rằng: Khách hàng là người quyết định sự tồn tại cũng như phát triển của công ty,
+              hãng xe Sao Việt đã được rất nhiều lời khen nhờ đội ngũ nhân viên nhiệt tình, hiếu khách, cư xử văn minh,
+              lịch thiệp. Xe đi Sapa của Sao Việt có nhiều phương thức thanh toán để tạo thuận lợi cho hành khách: tại
+              các văn phòng đại lý hoặc chuyển khoản. Hiện nay, nhà xe hoạt động trên nhiều tuyến đường như Hà Nội -
+              Sapa, Hà Nội - Thanh Hóa, Sapa - Thanh Hóa ..</p>
+          </div>
+
+          <!-- Giới thiệu -->
+          <div>
+            <h3 class="js-section-nav">1. Giới thiệu Xe Sao Việt đi Sapa từ Hà Nội</h3>
+            <img />
+
+            <section>
+              <h5><strong>Loại xe:</strong></h5>
+              <ul>
+                <li>
+                  Xe giường nằm 40 chỗ. Xe giường nằm đời mới, chất lượng cao nhiều tiện nghi hiện đại.
+                </li>
+                <li>
+                  Xe cabin VIP đi Sapa Sao Việt 21 chỗ: xe cabin đời mới có vách ngăn riêng biệt giữa tài xế và người
+                  ngồi phía sau với đầy đủ mọi tiện ích sang chảnh mà chỉ có giới thượng lưu mới có thể sở hữu và sử
+                  dụng.
+                </li>
+                <li>
+                  Xe giường nằm limousine 21 chỗ. Xe mới vừa được nâng cấp thêm, trên xe trang bị đầy đủ tiện nghi, hiện
+                  đại. Mang đến cảm giác thoải mái nhất cho khách hàng.
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h5><strong>Giờ xuất phát:</strong></h5>
+              <ul>
+                <li>
+                  Từ 5h30 sáng đến 23h, cách mỗi 1 tiếng có 1 chuyến.
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h5><strong>Thời gian di chuyển:</strong></h5>
+              <ul>
+                <li>
+                  Khoảng 5h đến 6h. Tuy nhiên thời gian có thể chênh lệch do tình hình giao thông.
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h5><strong>Điểm đi:</strong></h5>
+              <ul>
+                <li>
+                  7 Phạm Văn Đồng; 789 Giải Phóng, Bến xe Mỹ Đình. Tùy vào địa điểm đón, hành khách cần có mặt trước từ
+                  30 đến 1h giờ xuất phát để làm thủ tục.
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h5><strong>Điểm đến:</strong></h5>
+              <ul>
+                <li>
+                  69, Xuân Viên, tt Sapa. Xe có trả khách tại Bảo Hà, Sapa.
+                </li>
+              </ul>
+            </section>
+
+          </div>
+
+          <!-- Địa chỉ SDT -->
+          <div>
+            <h3 class="js-section-nav">2. Địa chỉ, số điện thoại đặt vé xe Sao Việt đi Sapa</h3>
+            <p style="text-align: center;">Xe Sao Việt đi Lào Cai từ Hà Nội: Review từ A-Z - CheapTravel</p>
+            <ul>
+              <li>
+                Tại Hà Nội, xe thường xuất phát tại 07 Phạm Văn Đồng - Cầu Giấy - Hà Nội. Về điểm đón, quý khách lưu ý
+                giờ trên hệ thống VeXeRe.com là giờ đón tại 07 Phạm Văn Đồng. Nếu quý khách đi từ BX Mỹ Đình thì xe đón
+                sớm hơn 15 phút, khách đi từ 789 Giải Phóng sẽ đón sớm hơn 60 phút nếu chuyến sớm hơn 15:00, đón sớm hơn
+                30 phút từ chuyến 15:00 trở đi. Khách tại VP Gia Lâm đón sớm hơn 30 phút
+              </li>
+              <li>
+                Tại Sapa, xe hỗ trợ trung chuyển trong bán kính 5km từ văn phòng Sapa
+              </li>
+              <li>
+                Đặt vé trực tuyến ngay:
+                <p style="text-align: center;"><a href="">Xe Sao Việt Hà Nội đi Sapa</a></p>
+                <p style="text-align: center;"><a href="">Xe Sao Việt Sapa đi Hà Nội</a></p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Khách hàng đánh giá -->
+          <div>
+            <h3 class="js-section-nav">3. Đánh giá xe Sao Việt đi Sapa từ khách hàng</h3>
+            <p>Ưu điểm: Xe xuất phát đúng khung giờ cố định hằng ngày. Cơ sở vật chất trên xe luôn được đảm bảo. Đội ngũ
+              tài xế tận tâm, mang đến hành trình an toàn cho hành khách. Nhân viên phục vụ luôn hỗ trợ khách hàng hết
+              mình, chu đáo, luôn giải đáp các thắc mắc của khách hàng tận tình.
+            </p>
+            <p> Nhược điểm: Số lượng khách đi đông nên thường hết vé sớm vào các ngày cuối tuần hoặc cao điểm. Bạn nên
+              liên hệ tổng đài 1900 7070 hoặc đặt vé trực tuyến trước để tránh hết vé.
+            </p>
+            <h5><strong>Một số đánh giá từ khách hàng đã trải nghiệm dịch vụ:</strong></h5>
+            <ul>
+              <li>
+                <p>
+                  Khách hàng Hoa: “-Ưu điểm: Sao Việt có 02 loại xe chính, trong đó xe giường nằm 40 chỗ (giá vé rẻ hơn)
+                  có chất lượng khá, còn xe Limousine 9 chỗ thì rất mới và đẹp ( xe không đón khách dọc đường). Chất
+                  lượng dịch vụ tốt, nhân viên ân cần, nhiệt tình. Xe có văn phòng riêng khá rộng rãi và phục vụ khách
+                  đợi xe chu đáo. Sao Việt còn có chương trình tri ân khách hàng thân thiết - Nhược điểm: xe tuyến Sapa
+                  hay phải trung chuyển ở Sapa.”
+                </p>
+              </li>
+              <li>
+                <p>
+                  Khách hàng L.Nguyen: “Sao Viet travel is quite comfortable which Ha Noi - Sapa trip. On asking the bus
+                  driver, they do to much interested in helping us out with our questions. So, I am very like their
+                  attitude and their behaviour.”
+                </p>
+              </li>
+              <li>
+                <p>
+                  Khách hàng Đ.Thúy: “Sao Viet travel is quite comfortable which Ha Noi - Sapa trip. On asking the bus
+                  driver, they do to much interested in helping us out with our questions. So, I am very like their
+                  attitude and their behaviour.”(Du lịch Sao Việt khá thoải mái khi đi Hà Nội - Sapa. Khi yêu cầu tài xế
+                  xe buýt, họ quan tâm nhiều đến việc giúp đỡ chúng tôi với những câu hỏi của chúng tôi. Vì vậy, tôi rất
+                  thích thái độ của họ và hành vi của họ.)
+                </p>
+              </li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="bus_house_contacts js_bus_house_info_item">
+          <h2>Địa chỉ, số điện thoại nhà xe Sao Việt </h2>
+          <section class="bus_house_contacts_wrapper">
+
+            <section class="bus_house_contact_office">
+              <h4>Văn phòng nhà xe Sao Việt ở Hà Nội</h4>
+
+              <section class="bus_house_contacts_items">
+                <div class="bus_house_contacts_item_info">
+                  <p>Bến xe Mỹ Đình (Quầy 36)</p>
+                  <p>Số 20 Phạm Hùng</p>
+                </div>
+                <div class="bus_house_contacts_item_action">
+                  <button class="bus_house_contacts_items_select_btn">🚌 Chọn Chuyến</button>
+                  <button>☎️ 1900999684</button>
+                </div>
+              </section>
+              <section class="bus_house_contacts_items">
+                <div class="bus_house_contacts_item_info">
+                  <p>VP 789 Giải Phóng</p>
+                  <p>Số 789 Giải Phóng</p>
+                </div>
+                <div>
+                  <button class="bus_house_contacts_items_select_btn">🚌 Chọn Chuyến</button>
+                  <button>☎️ 1900999684</button>
+                </div>
+              </section>
+              <section class="bus_house_contacts_items">
+                <div class="bus_house_contacts_item_info">
+                  <p>VP 7 Phạm Văn Đồng</p>
+                  <p>Số 7 Phạm Văn Đồng </p>
+                </div>
+                <div>
+                  <button class="bus_house_contacts_items_select_btn">🚌 Chọn Chuyến</button>
+                  <button>☎️ 1900999684</button>
+                </div>
+              </section>
+              <section class="bus_house_contacts_items">
+                <div class="bus_house_contacts_item_info">
+                  <p>VP Gia Lâm</p>
+                  <p>Số 16B Ngô Gia Khảm</p>
+                </div>
+                <div>
+                  <button class="bus_house_contacts_items_select_btn">🚌 Chọn Chuyến</button>
+                  <button>☎️ 1900999684</button>
+                </div>
+              </section>
+              <section class="bus_house_contacts_items">
+                <div class="bus_house_contacts_item_info">
+                  <p>VP 114 Trần Nhật Duật</p>
+                  <p>Số 114 Trần Nhật Duật</p>
+                </div>
+                <div>
+                  <button class="bus_house_contacts_items_select_btn">🚌 Chọn Chuyến</button>
+                  <button>☎️ 1900999684</button>
+                </div>
+              </section>
+              <section class="bus_house_contacts_items">
+                <div class="bus_house_contacts_item_info">
+                  <p>VP Nội Bài</p>
+                  <p>Ngã tư Nội Bài</p>
+                </div>
+                <div>
+                  <button class="bus_house_contacts_items_select_btn">🚌 Chọn Chuyến</button>
+                  <button>☎️ 1900999684</button>
+                </div>
+              </section>
+            </section>
+
+            <section class="bus_house_contact_office">
+              <h4>Văn phòng nhà xe Sao Việt ở Lào Cai</h4>
+
+              <section class="bus_house_contacts_items">
+                <div class="bus_house_contacts_item_info">
+                  <p>VP Lào Cai</p>
+                  <p>Số 333 Quảng Trường Ga (Phố Mới)</p>
+                </div>
+                <div class="bus_house_contacts_item_action">
+                  <button class="bus_house_contacts_items_select_btn">🚌 Chọn Chuyến</button>
+                  <button>☎️ 02143600600</button>
+                  <button>☎️ 02143700700</button>
+                </div>
+              </section>
+              <section class="bus_house_contacts_items">
+                <div class="bus_house_contacts_item_info">
+                  <p>VP Lào Cai</p>
+                  <p>Xã Bảo Hà</p>
+                </div>
+                <div class="bus_house_contacts_item_action">
+                  <button class="bus_house_contacts_items_select_btn">🚌 Chọn Chuyến</button>
+                  <button>☎️ 02143600600</button>
+                </div>
+              </section>
+              <section class="bus_house_contacts_items">
+                <div class="bus_house_contacts_item_info">
+                  <p>VP Sapa</p>
+                  <p>Số 3 đường N2 Fansipan</p>
+                </div>
+                <div class="bus_house_contacts_item_action">
+                  <button class="bus_house_contacts_items_select_btn">🚌 Chọn Chuyến</button>
+                  <button>☎️ 02143600600</button>
+                </div>
+              </section>
+              <section class="bus_house_contacts_items">
+                <div class="bus_house_contacts_item_info">
+                  <p>Bến xe Trung tâm Lào Cai</p>
+                  <p>Bến xe Trung tâm Lào Cai</p>
+                </div>
+                <div class="bus_house_contacts_item_action">
+                  <button class="bus_house_contacts_items_select_btn">🚌 Chọn Chuyến</button>
+                  <button>☎️ 02143600600</button>
+                </div>
+              </section>
+            </section>
+
+            <section class="bus_house_contact_office">
+              <h4>Văn phòng nhà xe</h4>
+
+              <section class="bus_house_contacts_items">
+                <div class="bus_house_contacts_item_info">
+                  <p>VP Km98</p>
+                  <p>Km 98 Cao Tốc</p>
+                </div>
+                <div class="bus_house_contacts_item_action">
+                  <button>☎️ 02143600600</button>
+                </div>
+              </section>
+            </section>
+
+          </section>
+
+        </section>
+
+        <section class="bus_house_rating js_bus_house_info_item">
+          <h2>Đánh giá chi tiết từ khách hàng</h2>
+
+          <section class="vexere_rating_item">
+            <div class="review_info">
+              <img style="width: 100%;" src="/assets/default-profile.png" />
+              <h3>Hoàng Lâm :))</h3>
+              <span>⭐⭐⭐⭐⭐(5/5)</span>
+            </div>
+            <div>
+              <hr style="margin: 0.5rem;">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia obcaecati consequatur fugiat
+                aperiam, ad repellat distinctio et iusto suscipit fuga odit facere officia voluptatem natus libero
+                facilis culpa veniam.
+              </p>
+            </div>
+          </section>
+          <section class="vexere_rating_item">
+            <div class="review_info">
+              <img style="width: 100%;" src="/assets/default-profile.png" />
+              <h3>Hoàng Lâm :))</h3>
+              <span>⭐⭐⭐⭐⭐(5/5)</span>
+            </div>
+            <div>
+              <hr style="margin: 0.5rem;">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia obcaecati consequatur fugiat
+                aperiam, ad repellat distinctio et iusto suscipit fuga odit facere officia voluptatem natus libero
+                facilis culpa veniam.
+
+              </p>
+            </div>
+          </section>
+          <section class="vexere_rating_item">
+            <div class="review_info">
+              <img style="width: 100%;" src="/assets/default-profile.png" />
+              <h3>Hoàng Lâm :))</h3>
+              <span>⭐⭐⭐⭐⭐(5/5)</span>
+            </div>
+            <div>
+              <hr style="margin: 0.5rem;">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia obcaecati consequatur fugiat
+                aperiam, ad repellat distinctio et iusto suscipit fuga odit facere officia voluptatem natus libero
+                facilis culpa veniam.
+              </p>
+            </div>
+          </section>
+          <section class="vexere_rating_item">
+            <div class="review_info">
+              <img style="width: 100%;" src="/assets/default-profile.png" />
+              <h3>Hoàng Lâm :))</h3>
+              <span>⭐⭐⭐⭐⭐(5/5)</span>
+            </div>
+            <div>
+              <hr style="margin: 0.5rem;">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta mollitia obcaecati consequatur fugiat
+                aperiam, ad repellat distinctio et iusto suscipit fuga odit facere officia voluptatem natus libero
+                facilis culpa veniam.
+              </p>
+            </div>
+          </section>
+
+        </section>
+      </section>
+
+    </section>
+
+  </section>
+  <!-- info -->
+</body>
+
+</html>

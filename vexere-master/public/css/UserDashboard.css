@@ -1,0 +1,361 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.brand {
+  padding: .1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-name:hover {
+  transition: .2s ease-in-out;
+  color: #0191ff;
+  cursor: pointer;
+}
+
+.brand-name {
+  color: #0A6EBD;
+  font-size: 1.5em;
+  transform: translate(0, 10%);
+}
+
+.nav-item>.login {
+  color: #0A6EBD;
+}
+
+.nav-item>.login:hover {
+  color: #0191ff;
+}
+
+.logout {
+  color: #FFCC33;
+}
+
+/* Container */
+.container {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  margin: 3em 9em;
+}
+
+/* Change infor */
+
+.user-change-information-form {
+  margin-top: 3rem;
+}
+
+.user-infor {
+  margin-bottom: 3em;
+}
+
+.user-infor>.user-image {
+  border-radius: 20%;
+}
+
+.user-infor>.user-image:hover {
+  cursor: pointer;
+}
+
+.user-login-name {
+  margin-left: .5em;
+  font-weight: 500;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.user-login-name:hover {
+  cursor: pointer;
+}
+
+.user-infor {
+  display: flex;
+  align-items: center;
+}
+
+/* Sidebar */
+.sidebar-display {
+  color: black !important;
+}
+
+.sidebar-navigation {
+  border-radius: 5px;
+  border: 1px;
+  width: 19.5em;
+  height: fit-content;
+  border-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.user-rank-span {
+  font-weight: 600;
+}
+
+.sidebar-list {
+  padding-top: .4em;
+}
+
+.sidebar-list>li {
+  margin-top: .8em;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  margin-left: 1.5em;
+}
+
+.sidebar-list>li:last-child {
+  color: #FFCC33;
+}
+
+.sidebar-list>li:hover {
+  cursor: pointer;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.sidebar-navigation>ul>li {
+  list-style-type: none;
+  font-size: 18px;
+}
+
+/* User change account infor */
+.user-change-acount-information {
+  margin-right: 10em;
+}
+
+.user-change-title>h2 {
+  font-size: 1.5em;
+}
+
+.user-change-title>p {
+  margin-top: .5rem;
+}
+
+.container label {
+  display: block;
+  text-align: right;
+  clear: right;
+  line-height: 250%;
+}
+
+.container input {
+  outline: none;
+  padding: .8em;
+  height: 3em;
+  width: 30em;
+  font-size: .9em;
+  border-radius: .2em;
+  float: right;
+  margin: 0 0 1em 2em;
+}
+
+.container .birthday-lable {
+  display: inline-block;
+}
+
+.container input[type=date] {
+  width: 33.75em;
+  height: 3.4em;
+  font-size: .8em;
+}
+
+.container .save-button {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-left: 33em;
+  border: none;
+  /* background-color: #FFCC33; */
+  background-color: #0A6EBD;
+  padding: .5em 1em;
+  cursor: pointer;
+  border-radius: 10px;
+  opacity: 0.6;
+}
+
+.container .save-button:hover {
+  transform: scale(1.05);
+  transition: .2s ease-in-out;
+  opacity: .8;
+}
+
+.mgl5 {
+  margin-left: 5em;
+}
+
+/* User rank */
+.user-rank-display {
+  margin-top: 4em;
+  margin-right: 31em;
+}
+
+.user-rank-display h4 {
+  font-size: 1.2em;
+}
+
+/* Invoice-ticket */
+.user-invoice-ticket-display {
+  margin-right: 2em;
+}
+
+.user-invoice-ticket-display>.tab {
+  width: 50em;
+}
+
+.tab>div>.tab-links {
+  font-size: 1em;
+  padding: 1em;
+  display: inline-block;
+  border: none;
+  background-color: #fff;
+}
+
+.tab>div>.tab-links:not(:first-child) {
+  margin-left: 16em;
+}
+
+.tab>div>.tab-links:hover {
+  border: none;
+  cursor: pointer;
+}
+
+.tab-content {
+  margin-top: 3.5em;
+}
+
+.tab-content>li {
+  padding: 0;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.tab-content>li:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.book-ticket-span>a {
+  text-decoration: none;
+  color: #0A6EBD;
+}
+
+.ticket-container {
+  margin-top: 3.5em;
+}
+
+.ticket-container:hover {
+  cursor: pointer;
+  transition: .2s ease-in-out;
+  color: #0A6EBD;
+}
+
+.ticket-container>div {
+  padding: 1em 1em;
+}
+
+.ticket-container>div>hr {
+  margin-right: 2em;
+  width: 105%;
+}
+
+.paid-span {
+  color: #fff;
+  height: fit-content;
+  padding: .3em .5em;
+  border: 1px solid #0191ff;
+  border-radius: 5px;
+  background-color: #0A6EBD;
+}
+
+.booked-date {
+  font-size: 1em;
+}
+
+.paid-ticket-time {
+  font-weight: 600;
+}
+
+.paid-ticket-information {
+  display: flex;
+  justify-content: space-between;
+}
+
+.license-plate {
+  font-weight: 600;
+}
+
+.rebook {
+  padding: 1em;
+  border: 1px solid #B2B2B2;
+  border-top: none;
+
+  color: #0A6EBD;
+}
+
+.rebook:hover {
+  cursor: pointer;
+}
+
+.rebook>a {
+  color: #0A6EBD;
+  text-decoration: none;
+  margin-bottom: .2em;
+  margin-left: 21em;
+}
+
+.rebook>a:hover {
+  transition: .2s ease-in-out;
+  color: #0A6EBD;
+}
+
+/* Promotion Display */
+.user-promotion-display {
+  margin-top: 4em;
+  margin-right: 41em;
+}
+
+.user-promotion-display h4 {
+  font-size: 1.2em;
+}
+
+/* Manage Card Display */
+.user-manage-card {
+  margin-top: 4em;
+  margin-right: 38em;
+}
+
+.user-manage-card h4 {
+  font-size: 1.2em;
+}
+
+/* Review Trip */
+.user-review-trip {
+  margin-top: 4em;
+  margin-right: 39em;
+}
+
+.user-review-trip h4 {
+  font-size: 1.2em;
+}
+
+/* Active */
+.active-tab {
+  color: #0A6EBD;
+  transition: .115s ease-in-out;
+}
+
+.active {
+  display: block;
+}
+
+.unactive {
+  display: none;
+}

@@ -1,0 +1,91 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model testtable {
+  id      Int  @id @default(autoincrement())
+  randNum Int?
+}
+
+model User{
+  id Int  @id @default(autoincrement())
+  Name String
+  email String?
+  phone String? @db.VarChar(15)
+  isAdmin Boolean @default(false)
+  uuid String
+}
+
+model Location {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  StartRoute Route[] @relation("starting")
+  EndRoute Route[] @relation("ending")
+}
+
+model Route {
+  id Int @id @default(autoincrement())
+
+  start Location @relation(name: "starting" ,fields: [startlocation], references: [id])
+  startlocation Int
+
+  end Location @relation(name: "ending",fields: [endlocation],references: [id])
+  endlocation Int
+
+  routeDetail RouteDetail[] @relation("route")
+}
+model RouteDetail{
+  id Int @id @default(autoincrement())
+  start DateTime
+  end DateTime
+  price Decimal @db.Money
+
+  route Route @relation(name: "route",fields: [routeId],references: [id])
+  routeId Int
+
+  bus Bus @relation(name: "busRoute",fields: [busId],references: [id])
+  busId Int
+
+  ticket Ticket[] @relation("routeDetail")
+}
+
+
+model BusHouse{
+  id Int @id @default(autoincrement())
+  Name String @db.Char(50)
+
+}
+model Bus{
+  id Int @id @default(autoincrement())
+  plate String @db.Char(20)
+  seatAmount Int
+  type Int
+
+  busroute RouteDetail[] @relation("busRoute")
+}
+
+model Ticket{
+  id Int @id @default(autoincrement())
+  rating Int
+  comment String?
+
+  routeDetail RouteDetail @relation(name: "routeDetail",fields: [routeDetailId],references: [id])
+  routeDetailId Int
+
+  rate Rating? @relation("ticketRating")
+}
+
+model Rating{
+  id Int @id @default(autoincrement())
+  rating Int
+  comment String?
+
+  ticket Ticket @relation(name: "ticketRating",fields: [ticketId],references: [id])
+  ticketId Int @unique
+}
